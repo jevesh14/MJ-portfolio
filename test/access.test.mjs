@@ -18,7 +18,9 @@ test('Only the initial homepage asks for a password', async () => {
     assert.match(response.headers.get('cache-control'), /no-store/);
     const html = await response.text();
     assert.match(html, /Welcome!/);
-    assert.match(html, /learn more about me and my work/);
+    assert.doesNotMatch(html, /Please enter the password to learn more/);
+    assert.match(html, /Portfolio Welcome/);
+    assert.match(html, /data:font\/ttf;base64,/);
     assert.match(html, /Additional Information section/);
     assert.match(html, /type="password"/);
   }
