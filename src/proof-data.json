@@ -1,0 +1,242 @@
+[
+  {
+    "group": "Research papers & presentations",
+    "file": "ambugo-paper",
+    "label": "AmbuGo research paper",
+    "detail": "Joint routing, selective priority, and simulation evaluation"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "predictx-patent",
+    "label": "PredictX provisional-patent manuscript",
+    "detail": "Five-model laboratory architecture and evaluation"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "spirometry-paper",
+    "label": "Spirometry research paper",
+    "detail": "Physics-informed recovery and selective prediction"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "ecofog-paper",
+    "label": "EcoFog research paper",
+    "detail": "Materials, experiments, and characterization"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "ecofog-poster",
+    "label": "EcoFog ISEF poster",
+    "detail": "Research poster"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "math-paper",
+    "label": "Music timbre mathematics paper",
+    "detail": "Complex singularity representation and reconstruction"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "physics-paper",
+    "label": "Capstan friction research report",
+    "detail": "Predictive law and physical experiments"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "capstan-presentation",
+    "label": "Capstan research presentation",
+    "detail": "36-slide PDF export supplied with the project"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "aeris-ieee-paper",
+    "label": "AERIS IEEE paper",
+    "detail": "Published speech, speaker, and emotion-recognition architecture"
+  },
+  {
+    "group": "Research papers & presentations",
+    "file": "aeris-prototype",
+    "label": "AERIS hardware documentation",
+    "detail": "Prototype photographs and integration"
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "ambugo-deployment",
+    "label": "AmbuGo deployment agreement",
+    "detail": "Punjab Police Traffic Wing and development-team responsibilities"
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "arihant-mou",
+    "label": "Arihant hospital MoU",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "arihant-evaluation",
+    "label": "Arihant evaluation report",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "bbmh-mou",
+    "label": "BBMH hospital MoU",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "bbmh-evaluation",
+    "label": "BBMH evaluation report",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "krishna-mou",
+    "label": "Krishna hospital MoU",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "krishna-evaluation",
+    "label": "Krishna evaluation report",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "porwal-mou",
+    "label": "Porwal hospital MoU",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "porwal-evaluation",
+    "label": "Porwal evaluation report",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "ramsnehi-mou",
+    "label": "Ramsnehi hospital MoU",
+    "detail": ""
+  },
+  {
+    "group": "Deployment & hospital records",
+    "file": "ramsnehi-evaluation",
+    "label": "Ramsnehi evaluation report",
+    "detail": ""
+  },
+  {
+    "group": "Letters & funding",
+    "file": "human-archive-letter",
+    "label": "Human Archive internship completion letter",
+    "detail": "Dates, responsibilities, and hand-movement modelling"
+  },
+  {
+    "group": "Letters & funding",
+    "file": "predictx-funding",
+    "label": "PredictX CSR sanction letter",
+    "detail": "₹20 lakh sanctioned for research and development"
+  },
+  {
+    "group": "Letters & funding",
+    "file": "gracker-reference",
+    "label": "GrackerAI recommendation letter",
+    "detail": "Supplied professional reference"
+  },
+  {
+    "group": "Letters & funding",
+    "file": "cambridge-science",
+    "label": "Cambridge Science Competition award and letter",
+    "detail": "Best in Country, 2024"
+  },
+  {
+    "group": "Awards & selections",
+    "file": "isef-award",
+    "label": "ISEF Third Grand Award certificate",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "isef-participation",
+    "label": "ISEF participation certificate",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "iris-gold",
+    "label": "IRIS Gold certificate",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "yau-math",
+    "label": "S.-T. Yau Mathematics finalist correspondence",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "yau-physics",
+    "label": "S.-T. Yau Physics finalist correspondence",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "diana-award",
+    "label": "Diana Award correspondence",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "cambridge-world",
+    "label": "Cambridge Top in the World certificate",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "sjwp-award",
+    "label": "Stockholm Junior Water Prize India certificate",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "genius-finalist",
+    "label": "GENIUS Olympiad finalist letter",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "slingshot-award",
+    "label": "Slingshot Honorable Mention certificate",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "crest-gold",
+    "label": "CREST Gold certificate",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "bausch-lomb",
+    "label": "Bausch + Lomb award letter",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "earth-prize",
+    "label": "Earth Prize Asia Runner-Up letter",
+    "detail": ""
+  },
+  {
+    "group": "Awards & selections",
+    "file": "earth-scholar",
+    "label": "Earth Prize scholar certificate",
+    "detail": ""
+  },
+  {
+    "group": "Résumé",
+    "file": "resume",
+    "label": "Résumé",
+    "detail": "Extracted from the submitted application; the full application profile is not distributed"
+  }
+]
