@@ -4,7 +4,7 @@ Source code for a dependency-free, ten-page personal portfolio with project narr
 
 ## Local setup
 
-The repository contains the source and build configuration. The runtime asset collection is kept separately in the local `public/` folder. Copy that folder from the working portfolio before running the full preview or validation. It includes images, videos, fonts, logos, and linked research documents.
+The repository includes the source code and complete `public/` folder: images, videos, fonts, logos, generated pages, and linked research documents. No separate asset-copy step is required.
 
 ```sh
 npm run build
@@ -12,7 +12,7 @@ npm run check
 npm run dev
 ```
 
-Open http://127.0.0.1:4173. Deploy the generated `dist/` directory to a static host after supplying the intended public assets.
+Open http://127.0.0.1:4173. The build generates the complete site in `dist/`; use `dist` as the deployment output directory.
 
 ## Source files
 
@@ -23,4 +23,4 @@ Open http://127.0.0.1:4173. Deploy the generated `dist/` directory to a static h
 - Other `src/*.css`: template components, responsive styling, and Penn navy/crimson colours.
 - `build.mjs`, `check.mjs`, `serve.mjs`: static generation, validation, and local server.
 
-Proof PDFs, institutional correspondence, and personal media are not part of this source-code upload.
+The public assets include the supporting documents and media linked by the portfolio.
