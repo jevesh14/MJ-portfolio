@@ -59,7 +59,7 @@ function screen(returnTo, error = '') {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#011f5b">
-<title>Portfolio access · Mrityunjay Gupta</title><link rel="stylesheet" href="/fonts/fonts.css">
+<title>Welcome · Mrityunjay Gupta</title><link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 :root{color-scheme:light;font-family:'EB Garamond',Georgia,serif;color:#011f5b;background:#fffefa}
 *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto}
@@ -77,11 +77,10 @@ button:hover{background:#082c6d}button:focus-visible{outline:2px solid #990000;o
 footer{padding:20px 24px;text-align:center;color:#68758a;font-size:15px}
 @media(max-width:480px){header{padding-top:22px;font-size:20px}main{padding:32px 0 48px}}
 </style></head><body><header>Mrityunjay Gupta</header><main>
-<span class="lock" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="9" width="14" height="11" rx="2"/><path d="M6 9V6a4 4 0 0 1 8 0v3"/><path d="M10 13v3"/></svg></span>
-<h1>Portfolio access</h1><p class="intro">Enter the password to view my portfolio.</p>
+<h1>Welcome!</h1><p class="intro">Please enter the password to learn more about me and my work.</p>
 <form action="/_portfolio/unlock" method="post"><input type="hidden" name="returnTo" value="${escapeHTML(returnTo)}">
 <label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256" aria-describedby="password-error password-note"${error ? ' aria-invalid="true"' : ''} autofocus>
-<p class="error" id="password-error" role="alert">${escapeHTML(error)}</p><button type="submit">View portfolio <span aria-hidden="true">↗</span></button>
+<p class="error" id="password-error" role="alert">${escapeHTML(error)}</p><button type="submit">Explore my portfolio <span aria-hidden="true">↗</span></button>
 </form><p class="note" id="password-note">The password is provided alongside the website link in the Additional Information section.</p>
 </main><footer>Mrityunjay Gupta · Portfolio</footer></body></html>`;
 }
@@ -133,6 +132,9 @@ export async function accessResponse(request) {
     if (!equal(await digest(credential), accessConfig.verifier)) return gate(request, returnTo, 'That password is incorrect. Please try again.');
     return new Response(null, { status: 303, headers: { ...privateHeaders, Location: returnTo, 'Set-Cookie': cookie(url, credential) } });
   }
+
+  // Only the initial homepage prompts for a password. Linked pages and files stay open.
+  if (!['/', '/index.html', '/_portfolio/unlock'].includes(url.pathname)) return null;
 
   const credential = cookieValue(request, cookieName(url));
   if (/^[A-Za-z0-9_-]{43}$/.test(credential) && equal(await digest(credential), accessConfig.verifier)) return null;

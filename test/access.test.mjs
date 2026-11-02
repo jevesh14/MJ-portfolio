@@ -10,31 +10,30 @@ function login(password, returnTo = '/', extra = {}) {
   return accessResponse(request('/_portfolio/unlock', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded', origin, ...extra }, body: new URLSearchParams({ password, returnTo }) }));
 }
 
-test('Every page and media type requires authentication, including direct requests', async () => {
-  for (const path of ['/', '/index.html', '/my-projects.html', '/research.html', '/documents/ambugo-paper.pdf', '/images/predictx-home.webp', '/videos/ambugo.mp4', '/app.js', '/style.css', '/api/anything', '/_portfolio/unlock']) {
+test('Only the initial homepage asks for a password', async () => {
+  for (const path of ['/', '/index.html', '/_portfolio/unlock']) {
     const response = await middleware(request(path));
     assert.equal(response.status, 401, path);
     assert.equal(response.headers.get('x-middleware-next'), null);
     assert.match(response.headers.get('cache-control'), /no-store/);
     const html = await response.text();
-    assert.match(html, /Portfolio access/);
+    assert.match(html, /Welcome!/);
+    assert.match(html, /learn more about me and my work/);
     assert.match(html, /Additional Information section/);
     assert.match(html, /type="password"/);
   }
 });
 
-test('HEAD and Range requests cannot bypass authentication', async () => {
-  const head = await middleware(request('/documents/ambugo-paper.pdf', { method: 'HEAD' }));
+test('Linked pages, PDFs, images, video ranges and styles open without authentication', async () => {
+  for (const path of ['/my-projects.html', '/research.html', '/documents/ambugo-paper.pdf', '/images/portrait.webp', '/videos/ambugo.mp4', '/app.js', '/style.css', '/fonts/fonts.css']) {
+    const response = await middleware(request(path));
+    assert.equal(response.headers.get('x-middleware-next'), '1', path);
+  }
+  assert.equal(await accessResponse(request('/documents/ambugo-paper.pdf', { method: 'HEAD' })), null);
+  assert.equal(await accessResponse(request('/videos/ambugo.mp4', { headers: { Range: 'bytes=0-100' } })), null);
+  const head = await middleware(request('/', { method: 'HEAD' }));
   assert.equal(head.status, 401);
   assert.equal(await head.text(), '');
-  assert.equal((await middleware(request('/videos/ambugo.mp4', { headers: { Range: 'bytes=0-100' } }))).status, 401);
-});
-
-test('Font requests are public, but other paths and POST requests are protected', async () => {
-  assert.equal(await accessResponse(request('/fonts/fonts.css')), null);
-  assert.equal(await accessResponse(request('/fonts/934aa932b4bc.woff2')), null);
-  assert.equal((await accessResponse(request('/fonts/secret.html'))).status, 401);
-  assert.equal((await accessResponse(request('/fonts/fonts.css', { method: 'POST' }))).status, 401);
 });
 
 test('Wrong passwords, malformed cookies and the public verifier cannot unlock the site', async () => {
@@ -54,13 +53,13 @@ test('Oversized bodies, cross-site submission and unsupported form types are rej
 });
 
 test('Return addresses are safely escaped in the password form', async () => {
-  const response = await accessResponse(request('/research.html?q=%22%3E%3Cscript%3E'));
+  const response = await accessResponse(request('/?q=%22%3E%3Cscript%3E'));
   const html = await response.text();
   assert.doesNotMatch(html, /<script>/);
   assert.match(html, /name="returnTo"/);
 });
 
-test('Correct password unlocks protected routes and preserves the requested page', { skip: !process.env.PORTFOLIO_TEST_PASSWORD }, async () => {
+test('Correct password unlocks the homepage and preserves the requested page', { skip: !process.env.PORTFOLIO_TEST_PASSWORD }, async () => {
   const response = await login(process.env.PORTFOLIO_TEST_PASSWORD, '/research.html#capstan');
   assert.equal(response.status, 303);
   assert.equal(response.headers.get('location'), '/research.html');

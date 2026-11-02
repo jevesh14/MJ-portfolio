@@ -1,7 +1,7 @@
 import { next } from '@vercel/functions';
 import { accessResponse, privateHeaders } from './src/access.mjs';
 
-// Covers pages and direct PDF, image and video requests.
+// The initial homepage is gated; linked pages, documents and media remain open.
 export const config = { matcher: '/:path*' };
 
 export default async function middleware(request) {

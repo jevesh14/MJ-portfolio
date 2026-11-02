@@ -28,7 +28,7 @@ The public assets include the supporting documents and media linked by the portf
 
 ## Portfolio access
 
-Vercel Routing Middleware checks the shared portfolio password before serving pages, documents, images, or videos. The local server uses the same check. Only the fonts needed by the access screen are available before login. Successful login keeps an HttpOnly session cookie until the browser session ends; `/_portfolio/lock` clears it.
+Vercel Routing Middleware checks the shared portfolio password on the initial homepage only. The local server uses the same check. Linked pages, documents, images and videos remain directly accessible without a password. Successful login keeps an HttpOnly session cookie until the browser session ends; `/_portfolio/lock` clears it.
 
 `access-config.mjs` contains a salted PBKDF2 verifier. Neither the password nor the browser credential is stored in source or browser JavaScript. The access screen tells visitors to use the password supplied alongside the website link in the Additional Information section.
 
