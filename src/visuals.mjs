@@ -1,7 +1,182 @@
-const mapUrl='https://www.openstreetmap.org/export/embed.html?bbox=76.684%2C30.673%2C76.754%2C30.728&layer=mapnik';
-const map=(title)=>`<div class="ag-map"><iframe src="${mapUrl.replaceAll('&','&amp;')}" title="${title}" loading="lazy" referrerpolicy="no-referrer"></iframe><a href="https://www.openstreetmap.org/#map=14/30.7005/76.7190" target="_blank" rel="noopener">Mohali · © OpenStreetMap contributors ↗</a></div>`;
-export const operatorConcept=()=>`<figure class="ag-screen ag-control"><div class="ag-top"><strong>AmbuGo</strong><span>Traffic control</span><small>Prototype · sample requests</small></div><div class="ag-board-header"><h3>Priority requests</h3><span class="ag-connected">Connected · observations 1.2 s ago</span></div><div class="ag-counts"><span><b>3</b> Active missions</span><span><b>4</b> Requests</span><span><b>1</b> Held</span></div>${map('Street map of Mohali for the traffic-control interface')}<div class="ag-queue"><table><thead><tr><th>Mission / junction</th><th>Requested change</th><th>Checks</th><th>Decision</th></tr></thead><tbody><tr><td>AG-014 · Phase 7<small>East approach · ETA 19 s</small></td><td>Extend green<small>8 s requested</small></td><td>Clearance satisfied<small>Receiving space available</small></td><td><span class="ag-ok">Ready</span></td></tr><tr><td>AG-018 · Sector 61<small>North approach · ETA 31 s</small></td><td>Advance phase<small>Next compatible transition</small></td><td>Clearance remaining<small>3 s before transition</small></td><td><span class="ag-wait">Waiting</span></td></tr><tr><td>AG-022 · Phase 9<small>West approach · ETA 24 s</small></td><td>Green extension<small>6 s requested</small></td><td>Downstream occupied<small>Illustrative occupancy: 92%</small></td><td><span class="ag-held">Held</span></td></tr><tr><td>AG-014 · Sector 62<small>Next corridor junction</small></td><td>Retain current plan</td><td>Progress within allowance</td><td><span>Baseline</span></td></tr></tbody></table></div><div class="ag-events"><span>Event log</span><p>12:04:18 Request received · 12:04:19 Constraints checked · 12:04:19 Awaiting controller acknowledgement</p></div><figcaption>Control-board prototype: location, competing requests, phase constraints, receiving space, and controller acknowledgements. Request values are illustrative.</figcaption></figure>`;
-export const driverConcept=()=>`<figure class="ag-screen ag-driver"><div class="ag-top"><strong>AmbuGo</strong><span>Driver</span></div><div class="ag-guidance"><span aria-hidden="true">↱</span><div><small>Sample route instruction</small><strong>Right turn in 250 m</strong><span>Continue toward Sector 61</span></div></div>${map('Street map of Mohali for the ambulance-driver interface')}<div class="ag-arrival"><div><b>3 min 40 s</b><small>Estimated arrival</small></div><div><b>1.8 km</b><small>Remaining route</small></div></div><div class="ag-next"><small>Next signal request</small><strong>Phase 7 · acknowledged</strong><span>Follow the displayed road signal.</span></div><div class="ag-driver-controls"><span>Report blocked road</span><span>Contact control room</span></div><p class="ag-route-note">Receiving hospital · route updates follow observed progress.</p><figcaption>Driver prototype: route instruction, estimated arrival, request status, and obstruction reporting. Sample mission.</figcaption></figure>`;
-export const interfacePair=()=>`<div class="ag-interface-pair">${operatorConcept()}${driverConcept()}</div>`;
-export const overviewFigure=()=>'';
-export const neatPhotos=(items,photo,extra='')=>`<div class="curated-photos ${extra}">${items.map(([name,caption])=>photo(name,caption)).join('')}</div>`;
+
+const mapUrl = 'https://www.openstreetmap.org/export/embed.html?bbox=76.684%2C30.673%2C76.754%2C30.728&layer=mapnik';
+
+const map = (title) => `
+  <div class="ag-map">
+    <iframe
+      src="${mapUrl.replaceAll('&', '&amp;')}"
+      title="${title}"
+      loading="lazy"
+      referrerpolicy="no-referrer">
+    </iframe>
+    <a href="https://www.openstreetmap.org/#map=14/30.7005/76.7190"
+       target="_blank"
+       rel="noopener">
+      Mohali · © OpenStreetMap contributors ↗
+    </a>
+  </div>
+`;
+
+export const operatorConcept = () => `
+  <figure class="ag-screen ag-control">
+    <div class="ag-top">
+      <strong>AmbuGo</strong>
+      <span>Traffic control</span>
+    </div>
+
+    <div class="ag-board-header">
+      <h3>Priority requests</h3>
+      <span class="ag-connected">Controller monitoring</span>
+    </div>
+
+    <div class="ag-counts">
+      <span><b>3</b> Active missions</span>
+      <span><b>4</b> Requests</span>
+      <span><b>1</b> Held</span>
+    </div>
+
+    ${map('Street map of Mohali for the traffic-control interface')}
+
+    <div class="ag-queue">
+      <table>
+        <thead>
+          <tr>
+            <th>Mission / junction</th>
+            <th>Requested change</th>
+            <th>Checks</th>
+            <th>Decision</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              AG-014 · Phase 7
+              <small>East approach · ETA 19 s</small>
+            </td>
+            <td>
+              Extend green
+              <small>8 s requested</small>
+            </td>
+            <td>
+              Clearance satisfied
+              <small>Receiving space available</small>
+            </td>
+            <td><span class="ag-ok">Ready</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              AG-018 · Sector 61
+              <small>North approach · ETA 31 s</small>
+            </td>
+            <td>
+              Advance phase
+              <small>Next compatible transition</small>
+            </td>
+            <td>
+              Clearance remaining
+              <small>3 s before transition</small>
+            </td>
+            <td><span class="ag-wait">Waiting</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              AG-022 · Phase 9
+              <small>West approach · ETA 24 s</small>
+            </td>
+            <td>
+              Green extension
+              <small>6 s requested</small>
+            </td>
+            <td>
+              Downstream occupied
+              <small>High downstream occupancy</small>
+            </td>
+            <td><span class="ag-held">Held</span></td>
+          </tr>
+
+          <tr>
+            <td>
+              AG-014 · Sector 62
+              <small>Next corridor junction</small>
+            </td>
+            <td>Retain current plan</td>
+            <td>Progress within allowance</td>
+            <td><span>Baseline</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ag-events">
+      <span>Event log</span>
+      <p>
+        12:04:18 Request received ·
+        12:04:19 Constraints checked ·
+        12:04:19 Awaiting controller acknowledgement
+      </p>
+    </div>
+  </figure>
+`;
+
+export const driverConcept = () => `
+  <figure class="ag-screen ag-driver">
+    <div class="ag-top">
+      <strong>AmbuGo</strong>
+      <span>Driver</span>
+    </div>
+
+    <div class="ag-guidance">
+      <span aria-hidden="true">↱</span>
+      <div>
+        <small>Navigation</small>
+        <strong>Right turn in 250 m</strong>
+        <span>Continue toward Sector 61</span>
+      </div>
+    </div>
+
+    ${map('Street map of Mohali for the ambulance-driver interface')}
+
+    <div class="ag-arrival">
+      <div>
+        <b>3 min 40 s</b>
+        <small>Estimated arrival</small>
+      </div>
+      <div>
+        <b>1.8 km</b>
+        <small>Remaining route</small>
+      </div>
+    </div>
+
+    <div class="ag-next">
+      <small>Next signal request</small>
+      <strong>Phase 7 · acknowledged</strong>
+      <span>Follow the displayed road signal.</span>
+    </div>
+
+    <div class="ag-driver-controls">
+      <span>Report blocked road</span>
+      <span>Contact control room</span>
+    </div>
+
+    <p class="ag-route-note">
+      Receiving hospital · route updates follow observed progress.
+    </p>
+  </figure>
+`;
+
+export const interfacePair = () => `
+  <div class="ag-interface-pair">
+    ${operatorConcept()}
+    ${driverConcept()}
+  </div>
+`;
+
+export const overviewFigure = () => '';
+
+export const neatPhotos = (items, photo, extra = '') => `
+  <div class="curated-photos ${extra}">
+    ${items.map(([name, caption]) => photo(name, caption)).join('')}
+  </div>
+`;
