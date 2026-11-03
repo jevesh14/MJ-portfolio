@@ -60,7 +60,7 @@ function screen(returnTo, error = '') {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#011f5b">
-<title>Welcome · Mrityunjay Gupta</title><link rel="preload" href="/fonts/934aa932b4bc.woff2" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/fonts/fonts.css">
+<title>Welcome · Mrityunjay Gupta</title><link rel="icon" type="image/svg+xml" href="/favicon-mg.svg"><link rel="preload" href="/fonts/934aa932b4bc.woff2" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 ${welcomeFontCSS}
 :root{color-scheme:light;font-family:'EB Garamond',Georgia,serif;color:#011f5b;background:#fffefa}
