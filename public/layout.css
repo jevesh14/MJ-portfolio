@@ -131,3 +131,12 @@ mark.technical-emphasis{color:#990000;background:rgba(153,0,0,.075);font:inherit
 .back-to-top{position:fixed;right:24px;bottom:24px;z-index:40;display:inline-flex;align-items:center;gap:10px;padding:12px 17px;background:var(--navy,#011f5b);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:6px;box-shadow:0 3px 12px rgba(0,0,0,.15);font-size:15px;line-height:1.3;text-decoration:none}
 .back-to-top:hover{background:#990000;color:#fff}.back-to-top:focus-visible{outline:3px solid #990000;outline-offset:4px}
 @media(max-width:760px){.back-to-top{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));padding:10px 13px;font-size:14px}}
+
+#musica .musica-hero{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:34px;align-items:center;margin-bottom:28px}
+#musica .musica-title h2{font-size:clamp(48px,5.8vw,76px);line-height:1.02;letter-spacing:-.04em}
+#musica .musica-title h2 span{display:block}
+#musica .musica-title .subtitle{margin-top:19px;font-size:18px;line-height:1.4}
+#musica .musica-hero .photo>a{width:100%;margin:0}
+#musica .musica-hero .photo img{width:100%;height:auto;max-height:none;object-fit:contain}
+#musica>.story-beat.text-only:first-of-type{display:block}
+@media(max-width:760px){#musica .musica-hero{grid-template-columns:1fr;gap:22px;margin-bottom:23px}#musica .musica-title h2{font-size:clamp(48px,10vw,68px)}#musica .musica-title .subtitle{margin-top:13px}#musica .musica-hero .photo{width:100%;max-width:none}}
