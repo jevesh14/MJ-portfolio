@@ -56,6 +56,7 @@ main>.case-study:first-of-type{border-top:0!important}
 .home-demonstration .film{max-width:none;width:100%}
 .personal-crosslinks{padding:25px 0 32px}
 .personal-crosslinks p{font-size:clamp(25px,3vw,34px);line-height:1.3}
+.personal-crosslinks p+p{margin-top:24px}
 @media(max-width:760px){
  .case-study{padding:23px 0 25px}.story-beat{gap:22px;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
  .story-beat:has(>.story-visual>.portrait-photo){grid-template-columns:minmax(0,1fr) 155px}.story-visual>.portrait-photo img{max-width:155px;max-height:230px}
