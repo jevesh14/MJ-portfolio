@@ -140,3 +140,6 @@ mark.technical-emphasis{color:#990000;background:rgba(153,0,0,.075);font:inherit
 #musica .musica-hero .photo img{width:100%;height:auto;max-height:none;object-fit:contain}
 #musica>.story-beat.text-only:first-of-type{display:block}
 @media(max-width:760px){#musica .musica-hero{grid-template-columns:1fr;gap:22px;margin-bottom:23px}#musica .musica-title h2{font-size:clamp(48px,10vw,68px)}#musica .musica-title .subtitle{margin-top:13px}#musica .musica-hero .photo{width:100%;max-width:none}}
+
+.aashray-gallery{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.aashray-gallery .photo>a{aspect-ratio:auto}.aashray-gallery .photo img{width:100%;height:auto;max-height:none;object-fit:contain}
+@media(max-width:600px){.aashray-gallery{grid-template-columns:1fr}}
