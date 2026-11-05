@@ -321,3 +321,25 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
   #learning .story-beat.certificate-record > .story-copy { order: -1; }
   #learning .story-beat.certificate-record > .story-visual { align-self: center; width: 170px; max-width: 170px; }
 }
+
+/* Media follows its own proportions, without padded letterbox frames. */
+.photo > a, .technical-photo > a, .document-photo > a,
+.trophy-grid .photo > a, .press-gallery .photo > a {
+  background: transparent; border: 0; border-radius: 0; box-shadow: none;
+}
+.technical-photo > a { aspect-ratio: auto; }
+.technical-photo img { height: auto; }
+.film video, .robot-films video, .viking-pair video {
+  aspect-ratio: auto; height: auto; background: transparent;
+  border: 0; border-radius: 0; box-shadow: none;
+}
+.mesh-comparison { max-width: 390px; margin-inline: auto; }
+.mesh-comparison .photo > a { aspect-ratio: auto; }
+.mesh-comparison .photo img { height: auto; }
+.mesh-comparison .photo:first-child > a { overflow: hidden; }
+.mesh-comparison .photo:first-child img { width: 100%; clip-path: inset(5% 0 0); margin-top: -5%; }
+.mesh-key { display: grid; gap: 5px; margin: 12px 0 24px; font-size: 17px; line-height: 1.35; }
+.mesh-key span { display: flex; align-items: center; gap: 9px; }
+.mesh-key i { width: 13px; height: 13px; flex: 0 0 13px; border: 1px solid #777; }
+.capture-swatch { background: #fff; }
+.drainage-swatch { background: #252525; }
