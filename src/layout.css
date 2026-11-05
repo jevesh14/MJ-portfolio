@@ -1,6 +1,6 @@
 /* Home: introduction, original work, and correspondence. */
 .editorial-intro { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 52px; align-items: center; padding-block: 48px 40px; }
-.editorial-intro h1 { font-size: clamp(48px, 5.1vw, 66px); line-height: 1.05; margin-bottom: 24px; color: var(--accent); }
+.editorial-intro h1 { font-size: clamp(48px, 5.1vw, 66px); line-height: 1.05; margin-bottom: 24px; color: var(--navy); }
 .intro-words { max-width: 66ch; }
 .intro-words .quiet-link { margin-top: 18px; }
 .intro-portrait > a { display: block; aspect-ratio: 3/4; overflow: hidden; border-radius: 4px; }
@@ -25,13 +25,13 @@
 .penn-selection p { font-size: 18px; line-height: 1.65; max-width: 88ch; }
 .penn-selection a { display: inline-block; margin-top: 6px; font-size: 17px; }
 .home-demo { border-top: 1px solid var(--line); padding-block: 40px; }
-.home-demo h2 { font-size: clamp(34px, 3.5vw, 46px); max-width: 25ch; }
+.home-demo h2 { font-size: clamp(36px, 4vw, 52px); max-width: 34ch; }
 .home-demonstration { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.3fr); gap: 40px; align-items: start; }
 .home-demo-description { font-size: 21px; }
 .home-demo:nth-of-type(2) .home-demonstration { grid-template-columns: minmax(0, .8fr) minmax(0, 1.3fr); }
 .personal-crosslinks { border-top: 1px solid var(--line); padding-block: 28px 8px; max-width: var(--content); }
 .personal-crosslinks > p:first-child { font: 500 30px/1.25 var(--serif); }
-.personal-crosslinks > p + p { font-size: 19px; max-width: 90ch; }
+.personal-crosslinks > p + p { font-size: 24px; line-height: 1.5; max-width: 80ch; }
 /* Project accounts: prose wraps naturally around evidence, not an empty column. */
 .case-study { padding-block: 36px 48px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
 .case-study:first-of-type { border-top: 0; padding-top: 12px; }
@@ -253,8 +253,9 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
 
 /* Evidence, diagrams and documents share explicit, stable image frames. */
 .technical-photo > a { aspect-ratio: 16/10; }
-.document-photo > a { aspect-ratio: 4/3; }
-.technical-photo img, .document-photo img { width: 100%; height: 100%; object-fit: contain; }
+.document-photo > a { aspect-ratio: auto; background: transparent; }
+.technical-photo img { width: 100%; height: 100%; object-fit: contain; }
+.document-photo img { width: 100%; height: auto; max-height: none; object-fit: contain; }
 .method-flow { margin: 0; padding: 18px 0; }
 .method-flow ol { list-style: none; padding: 0; margin: 0; counter-reset: method; }
 .method-flow li { counter-increment: method; position: relative; padding: 0 0 22px 36px; margin-left: 12px; border-left: 1px solid #ad8e73; }
@@ -275,4 +276,25 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
   .report-flow .method-flow ol { grid-template-columns: 1fr 1fr; gap: 24px; }
   .report-flow .method-flow li { border-top: 1px solid #ad8e73; }
   .technical-photo > a { aspect-ratio: 16/10; }
+}
+
+/* Development photographs are unpadded; the completed mesh leads the sequence. */
+.mesh-development { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.photo.mesh-photo > a { aspect-ratio: auto; background: transparent; }
+.photo.mesh-photo img { width: 100%; height: auto; max-height: none; object-fit: contain; }
+.mesh-development .mesh-photo > a { aspect-ratio: 3/4; }
+.mesh-development .mesh-photo img { width: 100%; height: 100%; object-fit: cover; }
+.mesh-development img[src*="ecofog-mesh"] { transform: scale(1.12); }
+.research-points { margin: 14px 0 20px; padding-left: 24px; }
+.research-points li { padding-left: 4px; margin-bottom: 11px; }
+.story-copy strong { font-weight: 600; }
+.research-project-reference { margin-block: 0 32px; }
+.model-results .photo { margin-top: 20px; max-width: 800px; }
+#learning .document-photo > a { aspect-ratio: auto; }
+#learning .document-photo img { height: auto; max-height: none; object-fit: contain; }
+@media(max-width:600px) {
+  .mesh-development { grid-template-columns: 1fr 1fr; gap: 22px 16px; }
+  .mesh-development .mesh-photo:first-child { grid-column: 1 / -1; }
+  .mesh-development .mesh-photo:first-child > a { aspect-ratio: 4/3; }
+  .personal-crosslinks > p + p { font-size: 22px; }
 }

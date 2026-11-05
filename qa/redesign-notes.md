@@ -19,3 +19,13 @@ Photographic galleries use equal 4:3 frames with subject-specific focal position
 Changed the Community navigation label to Students For Last-Mile Learning. Innovation & entrepreneurship now precedes Research awards, with the prior section IDs retained. Project and research accounts have content-specific subheadings. AmbuGo and PredictX have connected workflow diagrams based on their existing technical descriptions.
 
 Ten-page build and 690-reference check pass. Six access tests pass; the successful-password test is skipped without its environment-provided password. DOM menu, viewer, filters, and ticker checks pass. CSS parsing and targeted ordering/label/diagram assertions pass. A full browser launch was attempted but is unavailable in this session; screenshot inspection of rendered pages remains outstanding.
+
+## Content and evidence corrections
+
+Restored the greeting in Penn blue with the exact text “Hi, I'm Mrityunjay!”, reduced the beige, enlarged the explanatory homepage heading and Diana correspondence text, and styled section-index links as outlined navigation buttons. Removed M&TSI from the moving recognition strip only.
+
+Reworked project, research, and work descriptions into concise academic explanations, technical subheadings, selective bold emphasis, and method/result bullets. AmbuGo’s project account now includes driver override, progress-feedback results, matched simulations, traffic metrics and uncertainty intervals, and field deployment. Removed the duplicated research article while retaining its anchor as a link to the project. Added the override label to the driver-interface demonstration.
+
+PredictX now has a separate Next steps section linking its CSR sanction and spirometry research. Renamed the professor-website navigation link. Showed the completed EcoFog mesh close-up alongside explicitly labelled early supports; removed white padding from the physical mesh photographs. The SFLML certificate uses its full uncropped aspect ratio.
+
+Validation: ten-page build; 687 local references and anchors before adding the direct full-certificate source link; six passing access tests and one password-dependent skip; CSS syntax, DOM interactions, and targeted content assertions pass. Numeric values across the site were retained. The only removed navigation target was the duplicate research jump link; its destination anchor remains valid.

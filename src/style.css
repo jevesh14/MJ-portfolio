@@ -1,12 +1,12 @@
 /* Shared primitives. Page composition lives in layout.css. */
 :root {
-  --paper: #faf4e7;
+  --paper: #fcfaf5;
   --white: #fff;
   --ink: #182d49;
   --navy: #011f5b;
   --accent: #990000;
   --muted: #655d53;
-  --line: #d8cbb8;
+  --line: #ddd5c8;
   --serif: 'EB Garamond', Georgia, serif;
   --gutter: clamp(20px, 4.5vw, 72px);
   --content: 1120px;
@@ -47,9 +47,9 @@ img, video { display: block; max-width: 100%; }
 .menu-toggle { display: none; border: 0; background: none; padding: 10px 0 10px 16px; font-size: 19px; }
 .page-opening { padding-block: 48px 32px; }
 .page-opening h1 { margin: 0; }
-.jump-nav { display: flex; flex-wrap: wrap; gap: 6px 26px; border-top: 1px solid var(--line); padding-top: 16px; margin-top: 28px; }
-.jump-nav a { font-size: 19px; line-height: 1.5; padding-block: 6px; text-decoration: none; }
-.jump-nav a:hover { text-decoration: underline; }
+.jump-nav { display: flex; flex-wrap: wrap; gap: 10px 12px; border-top: 1px solid var(--line); padding-top: 16px; margin-top: 28px; }
+.jump-nav a { display: inline-flex; align-items: center; font-size: 19px; line-height: 1.4; min-height: 44px; padding: 9px 13px; border: 1px solid var(--line); background: var(--paper); text-decoration: none; }
+.jump-nav a:hover { color: var(--accent); border-color: var(--accent); }
 .article-heading { margin-bottom: 28px; }
 .role-meta { font: 19px/1.45 var(--serif); color: var(--muted); margin-top: 12px; }
 .text-link, .quiet-link { display: inline-block; font-size: 19px; line-height: 1.5; }
@@ -103,7 +103,7 @@ figure { min-width: 0; }
   body.js #main-nav.is-open { display: grid; }
   #main-nav a { font-size: 19px; padding-block: 10px; }
   .page-opening { padding-block: 32px 24px; }
-  .jump-nav { gap: 4px 20px; margin-top: 22px; }
+  .jump-nav { gap: 9px; margin-top: 22px; }
   .jump-nav a { font-size: 18px; }
   .article-heading { margin-bottom: 22px; }
   .section-heading { align-items: start; gap: 16px; }
