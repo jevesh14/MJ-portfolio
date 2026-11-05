@@ -17,7 +17,7 @@ document.addEventListener('keydown', event => {
     menuButton.focus();
   }
 });
-window.matchMedia('(min-width: 1081px)').addEventListener('change', closeMenu);
+window.matchMedia('(min-width: 1151px)').addEventListener('change', closeMenu);
 
 // Original full-size photographs remain available by mouse and keyboard.
 const viewer = document.querySelector('.lightbox');

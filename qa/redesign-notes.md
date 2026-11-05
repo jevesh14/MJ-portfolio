@@ -9,3 +9,13 @@ Removed four superseded CSS layers and the spectacle-only motion script. Shared 
 Validation: ten pages built; 690 local references and anchors passed; comparison found no removed content links or numeric values. DOM checks passed for menus, Escape, photo viewing, filters, and recognition controls. CSS parsed without syntax errors. Six access tests pass; successful-password test is skipped without its environment-provided password. Authentication logic is unchanged; only its screen styling and button wording changed.
 
 Browser screenshot and rendered desktop/mobile inspection could not be completed: the connected browser supports only embedded apps and the local headless browser failed to launch. Responsive rules are implemented at 1080, 900, and 600 pixels, but real-browser visual verification remains outstanding.
+
+## Image and typography refinement
+
+Changed all visible text to EB Garamond, including navigation, captions, diagrams, tables, and the welcome screen. Added a warmer cream palette, a larger consistent portrait, direct demo introductions, and larger serif supporting text. References reviewed: farhan-haque.com and vidhimiglani.com.
+
+Photographic galleries use equal 4:3 frames with subject-specific focal positions. The six original performance photographs were inspected together, followed by a diagnostic preview of the crops. Diagrams use consistent 16:10 contain frames; press clippings use 3:4 contain frames. Source files and full-size lightbox images remain unchanged.
+
+Changed the Community navigation label to Students For Last-Mile Learning. Innovation & entrepreneurship now precedes Research awards, with the prior section IDs retained. Project and research accounts have content-specific subheadings. AmbuGo and PredictX have connected workflow diagrams based on their existing technical descriptions.
+
+Ten-page build and 690-reference check pass. Six access tests pass; the successful-password test is skipped without its environment-provided password. DOM menu, viewer, filters, and ticker checks pass. CSS parsing and targeted ordering/label/diagram assertions pass. A full browser launch was attempted but is unavailable in this session; screenshot inspection of rendered pages remains outstanding.

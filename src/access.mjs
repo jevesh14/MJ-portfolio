@@ -63,7 +63,7 @@ function screen(returnTo, error = '') {
 <title>Welcome · Mrityunjay Gupta</title><link rel="icon" type="image/svg+xml" href="/favicon-mg.svg"><link rel="preload" href="/fonts/934aa932b4bc.woff2" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 ${welcomeFontCSS}
-:root{color-scheme:light;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#182632;background:#fbfaf7}
+:root{color-scheme:light;font-family:'EB Garamond',Georgia,serif;color:#182d49;background:#faf4e7}
 *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto}
 header{width:min(1280px,calc(100% - 48px));margin:auto;padding:26px 0;border-bottom:1px solid #d5d5cf;font-family:'EB Garamond',Georgia,serif;font-size:25px;color:#011f5b}
 main{width:min(100% - 48px,460px);margin:auto;padding:48px 0 64px}

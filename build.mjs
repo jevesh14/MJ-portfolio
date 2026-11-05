@@ -1,8 +1,13 @@
-import {mkdir,readdir,stat,readFile,writeFile} from 'node:fs/promises';
+import {mkdir,readdir,stat,readFile,writeFile,rename} from 'node:fs/promises';
 import {join} from 'node:path';
 import {pages} from './src/site.mjs';
 const generated=['style.css','layout.css','app.js'];
 await mkdir('dist',{recursive:true});
+async function writeGenerated(path,bytes){
+  const temporary=path+'.buildtmp-'+process.pid;
+  await writeFile(temporary,bytes);
+  await rename(temporary,path);
+}
 async function copyAssets(source,destination,top=false){
   await mkdir(destination,{recursive:true});
   for(const entry of await readdir(source,{withFileTypes:true})){
@@ -18,6 +23,6 @@ async function copyAssets(source,destination,top=false){
   }
 }
 await copyAssets('public','dist',true);
-for(const name of generated){const bytes=await readFile('src/'+name);await writeFile('dist/'+name,bytes);await writeFile('public/'+name,bytes);}
-for(const [name,html] of Object.entries(pages)){await writeFile('dist/'+name,html);await writeFile('public/'+name,html);}
+for(const name of generated){const bytes=await readFile('src/'+name);await writeGenerated('dist/'+name,bytes);await writeGenerated('public/'+name,bytes);}
+for(const [name,html] of Object.entries(pages)){await writeGenerated('dist/'+name,html);await writeGenerated('public/'+name,html);}
 console.log(`Built ${Object.keys(pages).length} pages.`);
