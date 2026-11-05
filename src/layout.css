@@ -1,6 +1,6 @@
 /* Home: introduction, original work, and correspondence. */
 .editorial-intro { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 52px; align-items: center; padding-block: 48px 40px; }
-.editorial-intro h1 { font-size: clamp(48px, 5.1vw, 66px); line-height: 1.05; margin-bottom: 24px; color: var(--navy); }
+.editorial-intro h1 { font-size: clamp(48px, 5.1vw, 66px); line-height: 1.05; margin-bottom: 24px; color: var(--accent); }
 .intro-words { max-width: 66ch; }
 .intro-words .quiet-link { margin-top: 18px; }
 .intro-portrait > a { display: block; aspect-ratio: 3/4; overflow: hidden; border-radius: 4px; }
