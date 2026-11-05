@@ -1,0 +1,72 @@
+[
+  {
+    "file": "beyond-classroom.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "not present",
+    "recognitionControls": "not present"
+  },
+  {
+    "file": "education.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "not present",
+    "recognitionControls": "not present"
+  },
+  {
+    "file": "index.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "not present",
+    "recognitionControls": "pass"
+  },
+  {
+    "file": "media.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "pass",
+    "recognitionControls": "not present"
+  },
+  {
+    "file": "music.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "not present",
+    "recognitionControls": "not present"
+  },
+  {
+    "file": "my-projects.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "not present",
+    "recognitionControls": "not present"
+  },
+  {
+    "file": "proofs.html",
+    "menu": "pass",
+    "imageViewer": "not present",
+    "mediaFilters": "not present",
+    "recognitionControls": "not present"
+  },
+  {
+    "file": "research.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "not present",
+    "recognitionControls": "not present"
+  },
+  {
+    "file": "spirometry.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "not present",
+    "recognitionControls": "not present"
+  },
+  {
+    "file": "work.html",
+    "menu": "pass",
+    "imageViewer": "pass",
+    "mediaFilters": "not present",
+    "recognitionControls": "not present"
+  }
+]

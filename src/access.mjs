@@ -63,26 +63,25 @@ function screen(returnTo, error = '') {
 <title>Welcome · Mrityunjay Gupta</title><link rel="icon" type="image/svg+xml" href="/favicon-mg.svg"><link rel="preload" href="/fonts/934aa932b4bc.woff2" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 ${welcomeFontCSS}
-:root{color-scheme:light;font-family:'EB Garamond',Georgia,serif;color:#011f5b;background:#fffefa}
+:root{color-scheme:light;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#182632;background:#fbfaf7}
 *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto}
-header{padding:28px clamp(24px,6vw,88px);border-top:3px solid #990000;font-size:22px}
+header{width:min(1280px,calc(100% - 48px));margin:auto;padding:26px 0;border-bottom:1px solid #d5d5cf;font-family:'EB Garamond',Georgia,serif;font-size:25px;color:#011f5b}
 main{width:min(100% - 48px,460px);margin:auto;padding:48px 0 64px}
-.lock{display:inline-flex;width:42px;height:42px;align-items:center;justify-content:center;margin-bottom:22px;border:1px solid #011f5b26;border-radius:50%}
-h1{font-family:'Portfolio Welcome',Georgia,serif;font-synthesis:none;font-size:clamp(42px,7vw,56px);font-weight:600;line-height:1.04;letter-spacing:-.025em;margin:0 0 28px}
-p{font-size:21px;line-height:1.45;margin:0 0 26px}.intro{color:#52617a}
-label{display:block;font-size:19px;margin-bottom:8px}input,button{font:inherit;width:100%;min-height:54px;border-radius:3px}
-input{font-size:23px;letter-spacing:.04em;background:#fff;border:1px solid #011f5b40;color:#011f5b;padding:11px 14px}
-input:focus-visible{outline:2px solid #011f5b;outline-offset:3px}button{cursor:pointer;font-size:21px;background:#011f5b;color:#fffefa;border:1px solid #011f5b;padding:12px 20px;margin-top:2px}
-button:hover{background:#082c6d}button:focus-visible{outline:2px solid #990000;outline-offset:4px}
-.error{font-size:18px;line-height:1.3;min-height:24px;color:#990000;margin:9px 0 6px}
-.note{font-size:18px;line-height:1.45;margin:24px 0 0;color:#68758a;border-top:1px solid #011f5b1a;padding-top:19px}
-footer{padding:20px 24px;text-align:center;color:#68758a;font-size:15px}
-@media(max-width:480px){header{padding-top:22px;font-size:20px}main{padding:32px 0 48px}}
+h1{font-family:'EB Garamond',Georgia,serif;font-size:56px;font-weight:500;line-height:1.08;letter-spacing:-.025em;margin:0 0 32px}
+p{font-size:16px;line-height:1.7;margin:0 0 24px}
+label{display:block;font-size:14px;margin-bottom:10px}input,button{font:inherit;width:100%;min-height:50px;border-radius:0}
+input{font-size:18px;background:#fff;border:1px solid #9da5af;color:#182632;padding:10px 12px}
+input:focus-visible{outline:2px solid #990000;outline-offset:3px}button{cursor:pointer;font-size:15px;background:#011f5b;color:#fff;border:1px solid #011f5b;padding:12px 20px;margin-top:2px}
+button:hover{background:#990000;border-color:#990000}button:focus-visible{outline:2px solid #990000;outline-offset:4px}
+.error{font-size:14px;line-height:1.6;min-height:24px;color:#990000;margin:10px 0 8px}
+.note{font-size:13px;line-height:1.7;margin:24px 0 0;color:#59616a}
+footer{padding:20px 24px;text-align:center;color:#59616a;font-size:12px}
+@media(max-width:480px){main{padding:32px 0 48px}}
 </style></head><body><header>Mrityunjay Gupta</header><main>
 <h1>Welcome!</h1>
 <form action="/_portfolio/unlock" method="post"><input type="hidden" name="returnTo" value="${escapeHTML(returnTo)}">
 <label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256" aria-describedby="password-error password-note"${error ? ' aria-invalid="true"' : ''} autofocus>
-<p class="error" id="password-error" role="alert">${escapeHTML(error)}</p><button type="submit">Explore my portfolio <span aria-hidden="true">↗</span></button>
+<p class="error" id="password-error" role="alert">${escapeHTML(error)}</p><button type="submit">Enter portfolio</button>
 </form><p class="note" id="password-note">The password is provided alongside the website link in the Additional Information section.</p>
 </main><footer>Mrityunjay Gupta · Portfolio</footer></body></html>`;
 }

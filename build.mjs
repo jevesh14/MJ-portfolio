@@ -1,7 +1,7 @@
 import {mkdir,readdir,stat,readFile,writeFile} from 'node:fs/promises';
 import {join} from 'node:path';
 import {pages} from './src/site.mjs';
-const generated=['style.css','responsive.css','evidence.css','editorial.css','penn.css','layout.css','app.js','motion.js'];
+const generated=['style.css','layout.css','app.js'];
 await mkdir('dist',{recursive:true});
 async function copyAssets(source,destination,top=false){
   await mkdir(destination,{recursive:true});

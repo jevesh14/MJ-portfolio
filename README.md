@@ -20,8 +20,9 @@ Open http://127.0.0.1:4173. The build generates the complete site in `dist/`; us
 - `src/site.mjs`: page shell, homepage, navigation, recognitions, and sources.
 - `src/narratives.mjs`: project, research, work, music, and community content.
 - `src/visuals.mjs`: AmbuGo interface prototypes and photo layouts.
-- `src/layout.css`: current editorial layout and text emphasis.
-- Other `src/*.css`: template components, responsive styling, and Penn navy/crimson colours.
+- `src/style.css`: typography, colours, navigation, accessible controls, and shared components.
+- `src/layout.css`: page-specific layouts and their responsive breakpoints.
+- `src/app.js`: navigation, full-size images, media filters, inline videos, and recognition scrolling.
 - `build.mjs`, `check.mjs`, `serve.mjs`: static generation, validation, and local server.
 
 The public assets include the supporting documents and media linked by the portfolio.
