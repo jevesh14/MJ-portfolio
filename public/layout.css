@@ -288,7 +288,6 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
 .research-points { margin: 14px 0 20px; padding-left: 24px; }
 .research-points li { padding-left: 4px; margin-bottom: 11px; }
 .story-copy strong { font-weight: 600; }
-.research-project-reference { margin-block: 0 32px; }
 .model-results .photo { margin-top: 20px; max-width: 800px; }
 #learning .document-photo > a { aspect-ratio: auto; }
 #learning .document-photo img { height: auto; max-height: none; object-fit: contain; }
@@ -297,4 +296,11 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
   .mesh-development .mesh-photo:first-child { grid-column: 1 / -1; }
   .mesh-development .mesh-photo:first-child > a { aspect-ratio: 4/3; }
   .personal-crosslinks > p + p { font-size: 22px; }
+}
+
+/* Keep material photographs at a supporting scale beside the explanation. */
+#ecofog .mesh-development { max-width: 900px; margin-inline: auto; }
+@media(min-width:701px) {
+  #ecofog > .story-beat > .story-visual { width: 34%; max-width: 380px; }
+  #ecofog > .story-beat:has(.curated-photos) > .story-visual { width: 100%; max-width: 760px; align-self: center; }
 }

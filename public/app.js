@@ -93,3 +93,17 @@ document.querySelectorAll('[data-marquee-pause]').forEach(button => button.addEv
 sizeRecognitionStrip();
 window.addEventListener('resize', sizeRecognitionStrip);
 if (document.fonts?.ready) document.fonts.ready.then(sizeRecognitionStrip);
+
+// Preserve the former research URL without displaying the removed cross-reference.
+if (document.body.dataset.page === 'research' && location.hash === '#ambugo-study') {
+  location.replace('my-projects.html#ambugo');
+}
+
+// Keep the fixed return link out of the opening view and keyboard order.
+const backToTop = document.querySelector('.back-to-top');
+function updateBackToTop() {
+  if (backToTop) backToTop.hidden = window.scrollY < 400;
+}
+window.addEventListener('scroll', updateBackToTop, { passive: true });
+window.addEventListener('pageshow', updateBackToTop);
+updateBackToTop();

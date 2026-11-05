@@ -29,3 +29,9 @@ Reworked project, research, and work descriptions into concise academic explanat
 PredictX now has a separate Next steps section linking its CSR sanction and spirometry research. Renamed the professor-website navigation link. Showed the completed EcoFog mesh close-up alongside explicitly labelled early supports; removed white padding from the physical mesh photographs. The SFLML certificate uses its full uncropped aspect ratio.
 
 Validation: ten-page build; 687 local references and anchors before adding the direct full-certificate source link; six passing access tests and one password-dependent skip; CSS syntax, DOM interactions, and targeted content assertions pass. Numeric values across the site were retained. The only removed navigation target was the duplicate research jump link; its destination anchor remains valid.
+
+## Caption, wording and scrolling polish
+
+Removed the control-board explanatory caption and its Prototype/sample-requests label. Standardized sentence-case starts after bullet labels and replaced EcoFog’s third material point with PLA’s hydrophobic drainage role. Combined the flagged short statements, rewrote the timbre conclusion, removed em dashes from the narrative text, and removed only from the compatibility-controls wording. Caption labels no longer end in periods, including image-viewer labels.
+
+Removed the visible AmbuGo research cross-reference, with a hidden legacy anchor and redirect for existing links. Removed the youngest-intern phrase. Reduced EcoFog gallery width to 900px and supporting figures to at most 380px on desktop. The fixed Back to top link is initially hidden and appears after 400px of scrolling, with tested return-to-top hiding. DOM and targeted wording/caption/scroll checks pass; build and reference checks pass.
