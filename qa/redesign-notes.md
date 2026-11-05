@@ -35,3 +35,11 @@ Validation: ten-page build; 687 local references and anchors before adding the d
 Removed the control-board explanatory caption and its Prototype/sample-requests label. Standardized sentence-case starts after bullet labels and replaced EcoFog’s third material point with PLA’s hydrophobic drainage role. Combined the flagged short statements, rewrote the timbre conclusion, removed em dashes from the narrative text, and removed only from the compatibility-controls wording. Caption labels no longer end in periods, including image-viewer labels.
 
 Removed the visible AmbuGo research cross-reference, with a hidden legacy anchor and redirect for existing links. Removed the youngest-intern phrase. Reduced EcoFog gallery width to 900px and supporting figures to at most 380px on desktop. The fixed Back to top link is initially hidden and appears after 400px of scrolling, with tested return-to-top hiding. DOM and targeted wording/caption/scroll checks pass; build and reference checks pass.
+
+## Sentence flow, recognition order and certificate layout
+
+Reviewed narrative paragraphs across Home, Projects, Research, Spirometry, Work, Music and Community, combining short standalone statements into connected explanations. The NHANES evaluation now describes participant-separated fitting and independent survey-cycle evaluation together. Factual award metadata, interface labels and captions remain concise. All prior numeric values and content links were retained.
+
+Used the user’s exact PLA sentence. Reordered both the moving strip and recognition records to ISEF, S.-T. Yau, then Diana, and changed the portrait caption to At my booth at ISEF. Replaced the tall certificate row with a full, uncropped preview capped at 260px, a record summary and a direct full-size link; reduced inter-section spacing.
+
+Ten-page build and 689-reference check pass. DOM controls, scrolling behaviour, CSS syntax, exact wording, both award orders, preserved numeric values/links and certificate-record markup pass. A prose audit finds no isolated sentences shorter than twelve words in the main narrative paragraphs, excluding metadata and interface labels.

@@ -33,11 +33,11 @@
 .personal-crosslinks > p:first-child { font: 500 30px/1.25 var(--serif); }
 .personal-crosslinks > p + p { font-size: 24px; line-height: 1.5; max-width: 80ch; }
 /* Project accounts: prose wraps naturally around evidence, not an empty column. */
-.case-study { padding-block: 36px 48px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.case-study { padding-block: 32px 36px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
 .case-study:first-of-type { border-top: 0; padding-top: 12px; }
 .case-study .article-heading h2 { max-width: 26ch; }
 .story-beat { display: flow-root; }
-.story-beat + .story-beat { margin-top: 24px; }
+.story-beat + .story-beat { margin-top: 20px; }
 .story-copy { font-size: 21px; line-height: 1.55; }
 .story-copy h3 { margin-bottom: 13px; font-size: 25px; font-weight: 600; color: var(--navy); }
 .story-visual { float: right; width: 40%; margin: 4px 0 20px 36px; }
@@ -303,4 +303,21 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
 @media(min-width:701px) {
   #ecofog > .story-beat > .story-visual { width: 34%; max-width: 380px; }
   #ecofog > .story-beat:has(.curated-photos) > .story-visual { width: 100%; max-width: 760px; align-self: center; }
+}
+
+/* A compact document record avoids a full-height certificate beside two text lines. */
+#learning .story-beat.certificate-record { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 32px; align-items: center; }
+#learning .story-beat.certificate-record > .story-copy { grid-column: 1; grid-row: 1; }
+#learning .story-beat.certificate-record > .story-copy > .text-link { margin-top: 16px; }
+#learning .story-beat.certificate-record > .story-visual { grid-column: 2; grid-row: 1; float: none; width: 200px; max-width: 200px; margin: 0; }
+#learning .story-beat.certificate-record .photo > a { width: fit-content; aspect-ratio: auto; margin-inline: auto; }
+#learning .story-beat.certificate-record .photo img { width: auto; height: auto; max-width: 100%; max-height: 260px; object-fit: contain; margin-inline: auto; }
+@media(max-width:700px) {
+  #learning .story-beat.certificate-record { grid-template-columns: minmax(0, 1fr) 150px; gap: 20px; }
+  #learning .story-beat.certificate-record > .story-visual { width: 150px; max-width: 150px; }
+}
+@media(max-width:540px) {
+  #learning .story-beat.certificate-record { display: flex; gap: 18px; }
+  #learning .story-beat.certificate-record > .story-copy { order: -1; }
+  #learning .story-beat.certificate-record > .story-visual { align-self: center; width: 170px; max-width: 170px; }
 }
