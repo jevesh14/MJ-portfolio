@@ -363,3 +363,85 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
  .story-beat + .story-beat { margin-top: 28px; }
  .case-study > :is(.ag-interface-pair, .case-film, .robot-films, .clinical-photos, .report-flow, .model-results) + .story-beat { margin-top: 30px; }
 }
+
+
+/* Project and research sections: an open introduction, expandable method and results. */
+.section-fold {
+  border-bottom: 1px solid var(--line);
+  margin: 0;
+}
+.article-heading + .section-fold { border-top: 1px solid var(--line); }
+.section-fold__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  width: 100%;
+  min-height: 64px;
+  padding: 15px 4px 15px 0;
+  margin: 0;
+  color: var(--navy);
+  list-style: none;
+  font: 600 clamp(22px, 2.15vw, 27px)/1.35 var(--serif);
+  text-align: left;
+  text-wrap: pretty;
+}
+.section-fold__toggle::-webkit-details-marker { display: none; }
+.section-fold__toggle::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(-45deg);
+  transition: transform .16s ease;
+  flex: 0 0 10px;
+  margin: 0 9px 0 auto;
+}
+.section-fold[open] > .section-fold__toggle::after { transform: rotate(45deg); }
+.section-fold__toggle:hover { color: var(--accent); }
+.section-fold__panel {
+  display: flow-root;
+  padding: 5px 0 28px;
+}
+.section-fold__panel > .story-beat:first-child { margin-top: 0; }
+.section-fold__panel > .story-beat:last-child { margin-bottom: 0; }
+/* Keep supporting diagrams, photographs and tables with their parent subsection. */
+.section-fold__panel > .source-photo-pair,
+.section-fold__panel > .report-flow,
+.section-fold__panel > .ag-interface-pair,
+.section-fold__panel > .clinical-photos,
+.section-fold__panel > .case-film {
+  margin-top: 24px;
+}
+.section-fold__panel > .visual-section-intro { margin-top: 0; }
+.section-fold__panel > .visual-section-intro p { margin-top: 0; }
+.section-fold__panel > .visual-section-intro + .ag-interface-pair { margin-top: 18px; }
+.section-fold__panel > .story-beat + :is(.source-photo-pair, .clinical-photos, .case-film, .model-results) { margin-top: 26px; }
+.section-fold__panel > .report-flow:first-child { margin-top: 0; }
+.section-fold__panel > .story-beat + .story-beat { margin-top: 26px; }
+.section-fold__panel .story-copy p:first-child { margin-top: 0; }
+/* Nested model and experimental details still use their own summary control. */
+.section-fold__panel .model-results { margin-block: 24px 0; }
+@media (max-width: 600px) {
+  .section-fold__toggle { min-height: 58px; padding-block: 13px; font-size: 22px; }
+  .section-fold__panel { padding-bottom: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-fold__toggle::after { transition: none; }
+}
+
+/* Preserve the prior EcoFog figure sizing after moving each beat inside a fold. */
+@media (min-width: 701px) {
+  #ecofog .section-fold__panel > .story-beat > .story-visual {
+    width: 34%;
+    max-width: 380px;
+  }
+  #ecofog .section-fold__panel > .story-beat:has(.curated-photos) > .story-visual {
+    width: 100%;
+    max-width: 760px;
+    align-self: center;
+  }
+}
+#predictx .section-fold__panel > .report-flow:first-child { margin-top: 0; }
