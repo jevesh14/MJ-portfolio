@@ -37,7 +37,7 @@
 .case-study:first-of-type { border-top: 0; padding-top: 12px; }
 .case-study .article-heading h2 { max-width: 26ch; }
 .story-beat { display: flow-root; }
-.story-beat + .story-beat { margin-top: 20px; }
+.story-beat + .story-beat { margin-top: 34px; }
 .story-copy { font-size: 21px; line-height: 1.55; }
 .story-copy h3 { margin-bottom: 13px; font-size: 25px; font-weight: 600; color: var(--navy); }
 .story-visual { float: right; width: 40%; margin: 4px 0 20px 36px; }
@@ -343,3 +343,23 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
 .mesh-key i { width: 13px; height: 13px; flex: 0 0 13px; border: 1px solid #777; }
 .capture-swatch { background: #fff; }
 .drainage-swatch { background: #252525; }
+
+/* Editorial sections: headings follow the evidence they describe, with consistent rhythm. */
+.visual-section-intro { margin: 32px 0 18px; }
+.visual-section-intro h3 { font-size: 25px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+.visual-section-intro p { font-size: 20px; line-height: 1.5; }
+.case-study > :is(.ag-interface-pair, .case-film, .robot-films, .clinical-photos, .report-flow, .model-results, .source-photo-pair) + .story-beat { margin-top: 38px; }
+.case-study > .story-beat + :is(.case-film, .robot-films, .clinical-photos, .report-flow) { margin-top: 26px; }
+.clinical-photos { margin-top: 28px; }
+.clinical-photos figcaption { line-height: 1.4; }
+#predictx .report-flow { margin-block: 28px 34px; }
+#predictx .kidney-context { margin-top: 16px; }
+#predictx .predictx-spirometry-figure { max-width: 850px; margin: 25px auto 8px; }
+#predictx .predictx-spirometry-figure > a { aspect-ratio: auto; background: white; }
+#predictx .predictx-spirometry-figure img { width: 100%; height: auto; object-fit: contain; }
+@media (max-width: 600px) {
+ .visual-section-intro { margin-block: 26px 16px; }
+ .visual-section-intro p { font-size: 19px; }
+ .story-beat + .story-beat { margin-top: 28px; }
+ .case-study > :is(.ag-interface-pair, .case-film, .robot-films, .clinical-photos, .report-flow, .model-results) + .story-beat { margin-top: 30px; }
+}
