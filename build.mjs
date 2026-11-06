@@ -24,5 +24,17 @@ async function copyAssets(source,destination,top=false){
 }
 await copyAssets('public','dist',true);
 for(const name of generated){const bytes=await readFile('src/'+name);await writeGenerated('dist/'+name,bytes);await writeGenerated('public/'+name,bytes);}
-for(const [name,html] of Object.entries(pages)){await writeGenerated('dist/'+name,html);await writeGenerated('public/'+name,html);}
+
+for(const [name,html] of Object.entries(pages)){
+  const overridePath = join('src','page-overrides',name);
+  let output = html;
+  try {
+    output = await readFile(overridePath,'utf8');
+  } catch (error) {
+    if(error.code !== 'ENOENT') throw error;
+  }
+  await writeGenerated('dist/'+name,output);
+  await writeGenerated('public/'+name,output);
+}
+
 console.log(`Built ${Object.keys(pages).length} pages.`);
