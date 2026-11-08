@@ -539,3 +539,26 @@ body[data-page="index"] .home-demo { padding-block: 34px; }
 @media(min-width:651px) {
   #viking-clap .viking-pair { grid-template-columns: minmax(0,1fr) 250px; }
 }
+
+/* Development evidence is shown in full, without crop frames or zoom transforms. */
+#ecofog .mesh-development .mesh-photo > a { aspect-ratio: auto; width: 100%; overflow: visible; }
+#ecofog .mesh-development .mesh-photo img {
+  width: 100%; height: auto; max-height: none; object-fit: contain;
+  transform: none; clip-path: none; margin: 0;
+}
+#ecofog .mesh-comparison .photo:first-child img { clip-path: none; margin: 0; transform: none; }
+/* Scale individual project photographs to their supporting role. */
+#aeris .story-visual:has(img[src*="aeris-field"]),
+#niraksha .story-visual:has(img[src*="drone-build"]) { width: min(100%,460px); max-width: 460px; }
+#aeris .photo:has(img[src*="aeris-field"]),
+#niraksha .photo:has(img[src*="drone-build"]) { width: min(100%,460px); margin-inline: 0; }
+#aeris .photo:has(img[src*="aeris-field"]) > a,
+#niraksha .photo:has(img[src*="drone-build"]) > a { width: 100%; aspect-ratio: auto; }
+#aeris img[src*="aeris-field"], #niraksha img[src*="drone-build"] {
+  display: block; width: auto; height: auto; max-width: 100%; max-height: 350px; object-fit: contain;
+}
+#ambugo-section-3 > .section-fold__panel > .case-film { margin: 22px 0 0; }
+@media(max-width:600px) {
+  #ecofog .mesh-development { grid-template-columns: 1fr; }
+  #ecofog .mesh-development .mesh-photo { width: min(100%,360px); margin-inline: auto; }
+}
