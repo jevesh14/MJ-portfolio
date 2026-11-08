@@ -700,3 +700,180 @@ h3 .subsection-letter { color: #990000; }
   #ecofog .mesh-overview .mesh-comparison > .mesh-key { grid-column: 1; grid-row: 2; }
   #ecofog .mesh-overview .mesh-comparison > .photo:last-child { grid-column: 1; grid-row: 3; }
 }
+
+/* Each account reads left-to-right: explanation first, its evidence alongside. */
+body#page-top .case-study .story-beat.evidence-inline {
+  display: grid; grid-template-columns: var(--evidence-columns,minmax(0,1fr) minmax(0,1fr));
+  gap: 32px; align-items: start; margin-top: 0;
+}
+body#page-top .case-study .story-beat.evidence-inline > .story-copy {
+  grid-column: 1; grid-row: 1; order: 0; width: 100%; max-width: none; min-width: 0;
+}
+body#page-top .case-study .story-beat.evidence-inline > .story-visual {
+  grid-column: 2; grid-row: 1; order: 0; float: none; width: 100%; max-width: none;
+  min-width: 0; margin: 0; align-self: start;
+}
+body#page-top .evidence-inline .photo, body#page-top .evidence-inline .film {
+  width: 100%; max-width: none; margin: 0;
+}
+body#page-top .evidence-inline .photo > a { display: block; width: 100%; height: auto; aspect-ratio: auto; }
+body#page-top .evidence-inline .photo img {
+  display: block; width: 100%; height: auto; max-width: 100%; max-height: none; object-fit: contain;
+}
+body#page-top .evidence-inline .film video { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; }
+body#page-top .evidence-inline figcaption { font-size: 16px; line-height: 1.4; margin-top: 10px; }
+body#page-top .evidence-inline .story-copy h3 { margin-top: 0; }
+body#page-top .evidence-inline .story-visual > figure + figure { margin-top: 22px; }
+#ambugo-section-1 .story-visual { max-width: 410px; justify-self: end; }
+#ambugo-section-5 .story-visual .photo { max-width: 300px; margin-left: auto; }
+#ambugo-section-5 .photo img { max-height: 365px; width: auto; margin-inline: auto; }
+#ambugo .ambugo-comparison-inline .comparison-plots { display: grid; grid-template-columns: 1fr; gap: 20px; }
+#ambugo .ambugo-comparison-inline .comparison-plots .photo img { width: 100%; max-height: 295px; object-fit: contain; }
+#ambugo .ambugo-comparison-inline .comparison-plots figcaption { max-width: 54ch; }
+/* The two interfaces have identical boundaries, with compact content inside. */
+#ambugo .ag-interface-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); width: 100%; max-width: none; gap: 24px; align-items: stretch; }
+#ambugo .ag-interface-pair .matched-interface { width: 100%; min-width: 0; height: 480px; max-height: 480px; margin: 0; display: flex; flex-direction: column; overflow: auto; }
+#ambugo .ag-interface-pair .ag-map { flex: 0 0 auto; }
+#ambugo .ag-interface-pair .ag-map iframe { height: 135px; }
+#ambugo .ag-driver .ag-guidance { padding: 9px 12px; }
+#ambugo .ag-driver .ag-guidance strong { font-size: 23px; }
+#ambugo .ag-driver .ag-arrival { padding: 10px 12px; }
+#ambugo .ag-driver .ag-arrival b { font-size: 23px; }
+#ambugo .ag-driver .ag-next { padding: 9px 12px; }
+#ambugo .ag-driver .ag-driver-controls { padding: 10px 12px; gap: 8px; margin-top: auto; }
+/* EcoFog's two complete specimens and five development photographs stay with their text. */
+body#page-top #ecofog .evidence-inline .mesh-comparison { width: 100%; max-width: none; gap: 10px 18px; }
+body#page-top #ecofog .evidence-inline .mesh-comparison figcaption { font-size: 15px; }
+body#page-top #ecofog .evidence-inline .mesh-key { font-size: 14px; }
+.evidence-gallery { display: grid; gap: 18px; }
+.fabrication-gallery { grid-template-columns: repeat(6,minmax(0,1fr)); }
+.fabrication-gallery > figure:nth-child(-n+2) { grid-column: span 3; }
+.fabrication-gallery > figure:nth-child(n+3) { grid-column: span 2; }
+body#page-top #ecofog .fabrication-gallery .photo > a { display: flex; height: 155px; align-items: center; justify-content: center; }
+body#page-top #ecofog .fabrication-gallery .photo img { width: auto; height: auto; max-width: 100%; max-height: 155px; object-fit: contain; }
+body#page-top #ecofog .fabrication-gallery figcaption { font-size: 14px; line-height: 1.35; }
+#ecofog .aligned-results-pair { align-items: stretch; }
+#ecofog .aligned-results-pair > .section-fold { display: flex; flex-direction: column; }
+#ecofog .aligned-results-pair .section-fold__panel { display: flex; flex: 1; }
+#ecofog .aligned-results-pair .story-beat { flex: 1; }
+#ecofog .aligned-results-pair .story-visual { margin-top: auto; padding-top: 18px; }
+#ecofog .aligned-results-pair .technical-photo > a { display: flex; align-items: center; height: 280px; }
+#ecofog .aligned-results-pair .technical-photo img { max-height: 280px; width: 100%; object-fit: contain; }
+/* PredictX's table is read with the methods; cohort caveats span both columns. */
+.model-evaluation-row { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); gap: 32px; align-items: start; }
+.model-evaluation-row > .story-copy { width: 100%; max-width: none; }
+.model-evaluation-row > .model-results { min-width: 0; margin: 0; }
+.model-evaluation-row .model-results h3 { margin-top: 0; font-size: 23px; }
+.model-evaluation-row .model-results p { font-size: 17px; }
+.cohort-caveat { max-width: none; font-size: 19px; line-height: 1.5; margin: 22px 0; }
+.disease-gallery { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 22px; margin-top: 24px; }
+.disease-gallery > figure { grid-column: span 2; }
+.disease-gallery > figure:nth-child(4) { grid-column: 2 / span 2; }
+.disease-gallery > figure:nth-child(5) { grid-column: 4 / span 2; }
+.disease-gallery > figure:only-child { grid-column: 1 / span 3; }
+.disease-gallery .photo { width: 100%; margin: 0; }
+.disease-gallery .photo img { width: 100%; height: auto; object-fit: contain; }
+body#page-top #predictx .clinical-contact-sheet { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 0; }
+body#page-top #predictx .clinical-contact-sheet > figure:first-child { grid-column: 1 / -1; }
+body#page-top #predictx .clinical-contact-sheet > figure:first-child > a { height: 220px; }
+body#page-top #predictx .clinical-contact-sheet > figure:nth-child(n+2) > a { height: 150px; }
+body#page-top #predictx .clinical-contact-sheet img { width: 100%; height: 100%; object-fit: contain; }
+body#page-top #predictx .clinical-contact-sheet figcaption { font-size: 14px; }
+body#page-top .spiro-project-evidence .photo img { max-height: 235px; }
+/* Hardware and field photographs retain their original image pixels. */
+.aeris-build-gallery { grid-template-columns: 1fr 1fr; gap: 18px; }
+.aeris-build-gallery > figure:nth-child(3) { grid-column: 1 / -1; }
+body#page-top #aeris .aeris-build-gallery > figure:nth-child(-n+2) > a { height: 230px; display: flex; align-items: center; justify-content: center; }
+body#page-top #aeris .aeris-build-gallery > figure:nth-child(-n+2) img { max-height: 230px; width: auto; max-width: 100%; }
+body#page-top #aeris .aeris-build-gallery figcaption { font-size: 14px; }
+#aeris-feedback blockquote { margin: 20px 0; padding-left: 20px; border-left: 2px solid var(--accent); }
+.aeris-feedback-evidence { display: grid; grid-template-columns: 1.25fr .75fr; gap: 20px; align-items: start; }
+body#page-top .aeris-feedback-evidence > figure + figure { margin-top: 0; }
+/* The equation and its physical diagram share the research evidence column. */
+body#page-top .equation-inline .research-equation { width: 100%; margin: 0 0 22px; padding: 18px 0; }
+body#page-top .equation-inline .research-equation math { font-size: clamp(17px,1.8vw,22px); }
+body#page-top .equation-inline .research-equation figcaption { font-size: 14px; }
+.spirometry-case-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px 16px; }
+.spirometry-case-grid > figure:last-child { grid-column: 1 / -1; width: calc(50% - 8px) !important; justify-self: center; }
+body#page-top .spirometry-case-grid figcaption { font-size: 14px; }
+.figure-key { font-size: 15px; line-height: 1.45; color: var(--muted); margin: 18px 0 0; }
+/* Linked evidence: the document or destination preview and its caption are one target. */
+.resource-preview-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); gap: 26px 22px; align-items: start; }
+.resource-preview { display: block; min-width: 0; width: 100%; text-decoration: none; color: var(--navy); border: 0; padding: 0; margin: 0; }
+.resource-preview > figure { margin: 0; }
+.resource-preview-media { display: flex; align-items: center; justify-content: center; height: 235px; width: 100%; min-width: 0; }
+.resource-preview-media > img { display: block; width: auto; max-width: 100%; height: auto; max-height: 235px; object-fit: contain; transform-origin: center; transition: transform .18s ease; }
+.resource-preview-media.destination > img { width: 100%; height: 180px; max-height: 235px; object-fit: contain; }
+.resource-preview figcaption { font: 500 18px/1.35 var(--serif); margin: 13px 0 0; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.resource-preview:hover .resource-preview-media > img, .resource-preview:focus-visible .resource-preview-media > img { transform: scale(1.045); }
+.resource-preview:hover figcaption { color: var(--accent); border-color: var(--accent); }
+.resource-preview:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+.resource-preview-media.repository { flex-direction: column; align-items: flex-start; justify-content: center; gap: 18px; padding: 18px; border-block: 1px solid var(--line); }
+.resource-preview-media.repository small { font-size: 15px; color: var(--muted); }
+.resource-preview-media.repository strong { font-size: 25px; font-weight: 500; overflow-wrap: anywhere; }
+.recognition-record .source-links:has(.resource-preview) { display: grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap: 18px; }
+.recognition-record .resource-preview { max-width: 240px; }
+body[data-page="proofs"] main article:has(> .resource-preview) { align-items: start; }
+@media(prefers-reduced-motion:reduce) { .resource-preview-media > img { transition: none; } }
+@media(max-width:900px) {
+ body#page-top .case-study .story-beat.evidence-inline { gap: 24px; }
+ #ambugo .ag-interface-pair .matched-interface { height: 520px; max-height: 520px; }
+ .resource-preview-grid { grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); }
+ .resource-preview-media, .resource-preview-media > img { max-height: 215px; }
+}
+@media(max-width:740px) {
+ body#page-top .case-study .story-beat.evidence-inline { display: flex; flex-direction: column; gap: 22px; }
+ body#page-top .case-study .story-beat.evidence-inline > .story-copy { order: -1; }
+ body#page-top .case-study .story-beat.evidence-inline > .story-visual { width: 100%; max-width: 620px; }
+ body#page-top #ambugo-section-1 .story-visual { max-width: 410px; }
+ #ambugo .ag-interface-pair { grid-template-columns: 1fr; }
+ #ambugo .ag-interface-pair .matched-interface { height: 490px; max-height: 490px; }
+ .model-evaluation-row { grid-template-columns: 1fr; gap: 24px; }
+ .disease-gallery > figure:only-child { grid-column: 1 / -1; max-width: 500px; }
+ .disease-gallery > figure { grid-column: span 3; }
+ .disease-gallery > figure:nth-child(4), .disease-gallery > figure:nth-child(5) { grid-column: span 3; }
+ body#page-top #ecofog .fabrication-gallery .photo > a { height: 150px; }
+ body#page-top #ecofog .mesh-overview .mesh-comparison { grid-template-columns: 1.286713fr 1.596010fr; max-width: 620px; }
+ body#page-top #ecofog .mesh-comparison > .photo:first-child { grid-column: 1; grid-row: 1; }
+ body#page-top #ecofog .mesh-comparison > .mesh-key { grid-column: 1; grid-row: 2; }
+ body#page-top #ecofog .mesh-comparison > .photo:last-child { grid-column: 2; grid-row: 1 / span 2; }
+}
+@media(max-width:430px) {
+ .fabrication-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .fabrication-gallery > figure:nth-child(n) { grid-column: auto; }
+ .fabrication-gallery > figure:last-child { grid-column: 1 / -1; max-width: 220px; justify-self: center; }
+ .resource-preview-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px 16px; }
+ .resource-preview-media, .resource-preview-media > img { max-height: 190px; }
+ .resource-preview figcaption { font-size: 16px; }
+ .aeris-feedback-evidence { grid-template-columns: 1fr; }
+ body#page-top .spirometry-case-grid { gap: 18px 10px; }
+}
+/* Alpha masks affect only the surrounding tabletop; hardware pixels remain original. */
+img[src$="aeris-red-original.webp"] { -webkit-mask: url('images/aeris-red-mask.svg') center / 100% 100% no-repeat; mask: url('images/aeris-red-mask.svg') center / 100% 100% no-repeat; }
+img[src$="aeris-breadboard-original.webp"] { -webkit-mask: url('images/aeris-breadboard-mask.svg') center / 100% 100% no-repeat; mask: url('images/aeris-breadboard-mask.svg') center / 100% 100% no-repeat; }
+.validation-links:has(.resource-preview) { display: grid; grid-template-columns: repeat(auto-fit,minmax(145px,1fr)); gap: 22px; align-items: start; width: 100%; }
+.validation-links .resource-preview { max-width: 240px; }
+.proof-record-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px; }
+.proof-record-list > article { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.proof-record-list > article > .resource-preview { order: -1; }
+.proof-record-list > article .resource-preview-media { height: 265px; }
+.proof-record-list > article .resource-preview-media img { max-height: 265px; }
+.proof-record-list > article h3 { font-size: 22px; }
+@media(max-width:800px) { .proof-record-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:480px) { .proof-record-list { grid-template-columns: 1fr; } }
+/* Fit all route controls inside the same readable interface dimensions. */
+#ambugo .ag-interface-pair .matched-interface { height: 600px; max-height: none; overflow: visible; }
+#ambugo .ag-driver .ag-guidance small { display: none; }
+#ambugo .ag-driver .ag-driver-controls { grid-template-columns: repeat(3,minmax(0,1fr)); }
+#ambugo .ag-driver .ag-driver-controls span { min-width: 0; font-size: 14px; line-height: 1.25; padding: 8px 5px; }
+@media(max-width:1040px) { #ambugo .ag-interface-pair { grid-template-columns: 1fr; } }
+/* A compact contact strip keeps the three clinical views legible beside the short account. */
+body#page-top #predictx .clinical-contact-sheet { grid-template-columns: 1.2fr 1fr 1fr; gap: 12px; }
+body#page-top #predictx .clinical-contact-sheet > figure:first-child { grid-column: auto; }
+body#page-top #predictx .clinical-contact-sheet > figure:nth-child(n) > a { height: 180px; }
+@media(max-width:560px) {
+ body#page-top #predictx .clinical-contact-sheet { grid-template-columns: 1fr 1fr; }
+ body#page-top #predictx .clinical-contact-sheet > figure:first-child { grid-column: 1 / -1; }
+ body#page-top #predictx .clinical-contact-sheet > figure:first-child > a { height: 220px; }
+ body#page-top #predictx .clinical-contact-sheet > figure:nth-child(n+2) > a { height: 160px; }
+}
