@@ -504,3 +504,38 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
   .case-study .compact-evidence .technical-photo img { max-height: none; }
   #ecofog .ecofog-test-pair { gap: 14px; }
 }
+
+/* Home keeps a direct introduction and large, demonstration-led sections. */
+body[data-page="index"] .home-demonstration { display: flex; flex-direction: column; gap: 18px; }
+body[data-page="index"] .home-demo-description { max-width: 75ch; }
+body[data-page="index"] .home-demonstration > .film { width: min(100%, 960px); align-self: center; }
+body[data-page="index"] .home-demo h2 { max-width: 30ch; font-size: clamp(30px,3.4vw,44px); }
+body[data-page="index"] .home-demo { padding-block: 34px; }
+.identity-mark { cursor: default; color: inherit; }
+
+/* Stable proportions for documents, photographs and diagrams. */
+.case-study > .article-heading h2 { max-width: 30ch; }
+.evidence-pair .story-copy p { max-width: 70ch; }
+.section-fold > h3, .story-copy > h3 { text-wrap: pretty; }
+@media(min-width:850px) {
+  body[data-page="music"] .case-study .story-beat.compact-evidence {
+    display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,38%); gap: 30px; align-items: center;
+  }
+  body[data-page="music"] .case-study .story-beat.compact-evidence > .story-copy { grid-column: 1; grid-row: 1; width: 100%; }
+  body[data-page="music"] .case-study .story-beat.compact-evidence > .story-visual { grid-column: 2; grid-row: 1; width: 100%; max-width: none; margin: 0; }
+}
+#viking-clap .viking-pair { grid-template-columns: minmax(0,1.5fr) minmax(220px,.7fr); gap: 28px; align-items: start; }
+#viking-clap .viking-pair .photo > a { aspect-ratio: auto; width: 100%; }
+#viking-clap .viking-pair .photo img { width: 100%; height: auto; max-height: none; object-fit: contain; }
+.community-record-pair { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(180px,.6fr); gap: 24px; align-items: start; }
+.community-record-pair .photo:has(img[src*="sflml-3"]) > a { aspect-ratio: auto; }
+.community-record-pair .photo img[src*="sflml-3"] { height: auto; max-height: 300px; width: auto; max-width: 100%; margin-inline: auto; }
+@media(max-width:650px) {
+  #viking-clap .viking-pair { grid-template-columns: 1fr; }
+  #viking-clap .viking-pair .photo { width: min(100%,360px); margin-inline: auto; }
+  .community-record-pair { grid-template-columns: 1fr 160px; gap: 16px; }
+}
+@media(max-width:430px) { .community-record-pair { grid-template-columns: 1fr; } }
+@media(min-width:651px) {
+  #viking-clap .viking-pair { grid-template-columns: minmax(0,1fr) 250px; }
+}
