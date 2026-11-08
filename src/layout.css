@@ -358,3 +358,29 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
   .case-study > .article-heading { margin-bottom: 24px; }
   .story-beat + .story-beat { margin-top: 28px; }
 }
+
+/* Supporting figures stay within a readable size instead of filling the page. */
+.case-study .technical-photo { max-width: 680px; margin-inline: auto; }
+.case-study .technical-photo > a { width: fit-content; max-width: 100%; margin-inline: auto; }
+.case-study .technical-photo img { width: auto; height: auto; max-width: 100%; max-height: 440px; object-fit: contain; }
+.model-results .photo { width: min(100%, 520px); margin: 22px auto 0; }
+.model-results .photo img { max-height: 440px; }
+.photo:has(img[src*="ambugo-topology"]) { max-width: 480px; }
+.story-beat:has(img[src*="math-reconstruction"]) .story-visual,
+.story-beat:has(img[src*="spirometry-curves"]) .story-visual { max-width: 760px; margin-inline: auto; }
+.story-beat:has(.curated-photos) .story-visual { max-width: 850px; margin-inline: auto; }
+.case-study .source-photo-pair { gap: 22px; }
+.case-study .article-heading { margin-bottom: 28px; }
+.story-copy { font-size: 20px; line-height: 1.5; max-width: 76ch; min-width: 0; }
+.story-copy h3 { margin: 0 0 14px; font-size: 24px; line-height: 1.25; }
+.story-copy p + p { margin-top: 16px; }
+.story-beat + .story-beat { margin-top: 34px; }
+.model-results { margin-block: 30px; }
+.model-results > p { max-width: 76ch; font-size: 19px; line-height: 1.5; }
+.story-visual { margin-bottom: 18px; }
+@media(max-width:700px) {
+  .story-copy { font-size: 19px; }
+  .story-copy h3 { font-size: 22px; margin-bottom: 12px; }
+  .story-beat + .story-beat { margin-top: 28px; }
+  .case-study .technical-photo img { max-height: 360px; }
+}
