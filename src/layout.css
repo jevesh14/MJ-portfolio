@@ -641,3 +641,6 @@ body[data-page="my-projects"] .section-fold__heading { line-height: 1.25; }
   .sflml-event-grid > section { display: block; }
   .sflml-event-grid h4 { margin-top: 15px; }
 }
+
+/* Letter markers share the project-number accent. */
+h3 .subsection-letter { color: #990000; }
