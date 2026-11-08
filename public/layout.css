@@ -882,3 +882,98 @@ body#page-top .case-study .story-beat.evidence-inline .photo > a.cropped-photo {
   position: relative; display: block; width: 100%; height: auto;
   aspect-ratio: var(--crop-aspect); overflow: hidden;
 }
+/* Balance evidence as a single composition, with shared edges and natural text flow. */
+body#page-top .story-sources > .source-links.resource-preview-grid {
+  display: grid; grid-template-columns: repeat(var(--preview-count,3), minmax(0,1fr));
+  gap: 24px; align-items: start; width: 100%;
+}
+body#page-top .story-sources .resource-preview { max-width: none; min-width: 0; }
+body#page-top .story-sources .resource-preview-media { align-items: flex-start; }
+body#page-top .case-study .story-beat + .story-beat.evidence-inline { margin-top: 36px; }
+body#page-top .case-study .full-width-story,
+body#page-top .case-study .gallery-story { display: flex; flex-direction: column; gap: 22px; }
+body#page-top .case-study .full-width-story > .story-copy,
+body#page-top .case-study .gallery-story > .story-copy,
+body#page-top .case-study .full-width-copy {
+  width: 100%; max-width: none; grid-column: 1 / -1;
+}
+body#page-top .case-study .full-width-copy { margin-top: 20px; }
+body#page-top .case-study .gallery-story > .story-visual { width: 100%; max-width: none; float: none; margin: 0; }
+body#page-top #ambugo-section-1 .story-beat { --evidence-columns: 1.45fr .75fr !important; }
+body#page-top #ambugo-section-1 .story-visual { max-width: 340px; justify-self: center; }
+body#page-top #ambugo-section-1 .photo img { max-height: 385px; width: 100%; object-fit: contain; object-position: top; }
+body#page-top #ambugo .network-section { margin-inline: auto; align-items: start; }
+body#page-top #ambugo-section-5 .story-beat { --evidence-columns: 1.5fr .7fr !important; align-items: center; }
+body#page-top #ambugo-section-5 .story-visual { align-self: center; }
+body#page-top #ambugo-section-5 .photo { width: 100%; max-width: 280px; margin-inline: auto; }
+body#page-top #ambugo-section-5 .photo img { width: 100%; max-height: 385px; object-fit: contain; }
+/* Shared grid tracks align both headings, copy, and complete EcoFog graphs. */
+body#page-top #ecofog .aligned-results-pair { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px 32px; }
+body#page-top #ecofog .aligned-results-pair > .section-fold,
+body#page-top #ecofog .aligned-results-pair .section-fold__panel,
+body#page-top #ecofog .aligned-results-pair .story-beat { display: contents; }
+body#page-top #ecofog .aligned-results-pair .section-fold:first-child > h3,
+body#page-top #ecofog .aligned-results-pair .section-fold:first-child .story-copy,
+body#page-top #ecofog .aligned-results-pair .section-fold:first-child .story-visual { grid-column: 1; }
+body#page-top #ecofog .aligned-results-pair .section-fold:last-child > h3,
+body#page-top #ecofog .aligned-results-pair .section-fold:last-child .story-copy,
+body#page-top #ecofog .aligned-results-pair .section-fold:last-child .story-visual { grid-column: 2; }
+body#page-top #ecofog .aligned-results-pair .section-fold > h3 { grid-row: 1; margin: 0; }
+body#page-top #ecofog .aligned-results-pair .story-copy { grid-row: 2; width: 100%; max-width: none; }
+body#page-top #ecofog .aligned-results-pair .story-visual { grid-row: 3; width: 100%; max-width: none; float: none; margin: 0; padding-top: 4px; }
+body#page-top #ecofog .aligned-results-pair .technical-photo > a { display: flex; height: 280px; align-items: flex-start; justify-content: center; }
+body#page-top #ecofog .aligned-results-pair .technical-photo img { width: 100%; height: 280px; max-height: 280px; object-fit: contain; object-position: top; }
+body#page-top #predictx .clinical-contact-sheet { grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; }
+body#page-top #predictx .clinical-contact-sheet > figure:nth-child(n) { grid-column: auto; margin: 0; }
+body#page-top #predictx .clinical-contact-sheet > figure:nth-child(n) > a { display: block; height: auto; aspect-ratio: 4/3; }
+body#page-top #predictx .clinical-contact-sheet img { height: 100%; object-fit: cover; object-position: center; }
+body#page-top #aeris .evidence-inline .aeris-feedback-evidence > figure:nth-child(n) { margin: 0; align-self: start; }
+body#page-top #aeris .aeris-feedback-evidence .photo > a { display: block; margin: 0; }
+body#page-top #aeris .aeris-feedback-evidence img { object-position: top; }
+body#page-top #handy .story-beat { --evidence-columns: 1.4fr .8fr; }
+body#page-top #handy .story-visual { max-width: 390px; justify-self: center; }
+body#page-top #handy .photo img { max-height: 220px; object-position: top; }
+body#page-top #niraksha .story-visual > figure + figure { margin-top: 24px; }
+body#page-top #musica .teaching-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; align-items: start; }
+body#page-top #musica .teaching-grid > figure { margin: 0; width: 100%; }
+body#page-top #musica .teaching-grid .photo > a { display: block; width: 100%; height: auto; aspect-ratio: 4/3; }
+body#page-top #musica .teaching-grid img { width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: center; }
+body#page-top #musica .story-beat.partnership-record { width: min(100%,800px); margin-inline: auto; grid-template-columns: minmax(0,1fr) 270px; gap: 40px; align-items: center; }
+body#page-top #musica .partnership-record > .story-copy { align-self: center; }
+body#page-top #viking-clap .viking-pair { grid-template-columns: 1.792717fr .622105fr; gap: 28px; align-items: start; max-width: 1100px; margin-inline: auto; }
+body#page-top #viking-clap .viking-pair figure { margin: 0; width: 100%; }
+body#page-top #viking-clap .viking-pair video { display: block; width: 100%; height: auto; aspect-ratio: 1280/714; max-height: none; }
+body#page-top #learning .story-beat.fundraising-record { grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); align-items: start; gap: 32px; }
+body#page-top #learning .learning-evidence { display: grid; grid-template-columns: .7fr 1fr; gap: 18px; align-items: start; }
+body#page-top #learning .learning-evidence > figure:nth-child(n) { width: 100%; margin: 0; }
+body#page-top #learning .learning-evidence img { max-height: 300px; object-position: top; }
+body#page-top #learning .learning-evidence > figure:last-child > a { display: block; aspect-ratio: auto; }
+@media(max-width:740px) {
+ body#page-top .story-sources > .source-links.resource-preview-grid { grid-template-columns: repeat(var(--preview-count,3), minmax(155px,1fr)); overflow-x: auto; padding: 6px 2px 16px; gap: 20px; }
+ body#page-top #ecofog .aligned-results-pair { display: flex; flex-direction: column; gap: 28px; }
+ body#page-top #ecofog .aligned-results-pair > .section-fold { display: block; }
+ body#page-top #ecofog .aligned-results-pair .section-fold__panel { display: block; }
+ body#page-top #ecofog .aligned-results-pair .story-beat { display: flex; flex-direction: column; gap: 18px; }
+ body#page-top #ecofog .aligned-results-pair .story-visual { padding: 0; }
+ body#page-top #ecofog .aligned-results-pair .technical-photo img { height: auto; }
+ body#page-top #ecofog .aligned-results-pair .technical-photo > a { height: auto; }
+ body#page-top #musica .story-beat.partnership-record { display: flex; flex-direction: column; width: 100%; gap: 24px; }
+ body#page-top #musica .partnership-record > .story-visual { width: min(100%,270px); align-self: center; }
+ body#page-top #learning .story-beat.fundraising-record { display: flex; flex-direction: column; gap: 24px; }
+ body#page-top #learning .fundraising-record > .story-visual { width: 100%; }
+ body#page-top #viking-clap .viking-pair { grid-template-columns: 1.792717fr .622105fr; gap: 16px; }
+ body#page-top #musica .teaching-grid { gap: 14px; }
+}
+@media(max-width:480px) {
+ body#page-top #musica .teaching-grid { grid-template-columns: 1fr; }
+ body#page-top #predictx .clinical-contact-sheet { grid-template-columns: 1fr; }
+ body#page-top #aeris .aeris-feedback-evidence { grid-template-columns: 1fr; gap: 24px; }
+ body#page-top #viking-clap .viking-pair { grid-template-columns: 1fr; gap: 24px; }
+ body#page-top #viking-clap .viking-pair .photo { width: min(100%,300px); justify-self: center; }
+}
+body#page-top #niraksha-section-1 .story-visual .photo img { max-height: 260px; object-position: top; }
+body#page-top #niraksha-section-2 .story-visual { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; align-items: start; }
+body#page-top #niraksha-section-2 .story-visual > figure:nth-child(n) { margin: 0; }
+@media(max-width:480px) {
+ body#page-top #niraksha-section-2 .story-visual { grid-template-columns: 1fr; }
+}
