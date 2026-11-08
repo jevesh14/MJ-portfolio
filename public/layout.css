@@ -877,3 +877,8 @@ body#page-top #predictx .clinical-contact-sheet > figure:nth-child(n) > a { heig
  body#page-top #predictx .clinical-contact-sheet > figure:first-child > a { height: 220px; }
  body#page-top #predictx .clinical-contact-sheet > figure:nth-child(n+2) > a { height: 160px; }
 }
+/* Crop windows keep their explicit geometry inside the inline evidence layout. */
+body#page-top .case-study .story-beat.evidence-inline .photo > a.cropped-photo {
+  position: relative; display: block; width: 100%; height: auto;
+  aspect-ratio: var(--crop-aspect); overflow: hidden;
+}
