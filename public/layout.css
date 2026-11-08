@@ -463,3 +463,44 @@ body[data-page="research"] .story-visual img, body[data-page="spirometry"] .stor
   .mesh-overview .mesh-comparison .photo img { max-height: 170px; }
   .mesh-overview .mesh-key { font-size: 13px; }
 }
+
+/* Evidence follows the explanation at a size that can be read in place. */
+.case-study .story-beat.compact-evidence { display: flex; flex-direction: column; gap: 18px; }
+.case-study .story-beat.compact-evidence > .story-copy { order: -1; width: 100%; max-width: 78ch; }
+.case-study .story-beat.compact-evidence > .story-visual,
+#ecofog .story-beat.compact-evidence > .story-visual,
+#human-archive > .story-beat.compact-evidence:first-of-type > .story-visual {
+  float: none; width: 100%; max-width: 720px; margin: 0; align-self: start;
+}
+.case-study .compact-evidence .technical-photo { width: 100%; max-width: 640px; margin: 0; }
+.case-study .compact-evidence .technical-photo > a { width: 100%; }
+.case-study .compact-evidence .technical-photo img { width: 100%; height: auto; max-height: 390px; object-fit: contain; }
+.case-study .compact-evidence .film { width: min(100%, 640px); }
+.case-study .compact-evidence .film video { max-height: none; }
+.comparison-plots { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
+#ambugo .story-beat:has(.comparison-plots) > .story-visual { max-width: 960px; }
+.comparison-plots .technical-photo img { max-height: none; }
+.network-section { display: block; }
+.network-section > p { max-width: 78ch; }
+.network-section > .photo { width: min(100%, 460px); margin: 20px 0 0; }
+.network-section .photo img { max-height: 400px; width: 100%; height: auto; }
+.evidence-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; align-items: start; }
+.evidence-pair > .section-fold { margin-top: 0; }
+.evidence-pair .story-copy { max-width: none; }
+#ecofog .evidence-pair .story-visual { max-width: none; }
+#ecofog .evidence-pair .technical-photo { max-width: none; }
+#ecofog .evidence-pair .technical-photo img { max-height: none; }
+#ecofog .ecofog-test-pair { width: 100%; grid-template-columns: 1fr 1fr; gap: 24px; }
+#ecofog .ecofog-test-pair .photo { max-width: none; width: 100%; }
+#ecofog .ecofog-test-pair .photo > a { display: block; aspect-ratio: 4/3; width: 100%; }
+#ecofog .ecofog-test-pair .photo img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
+#ecofog .mesh-development { max-width: 900px; gap: 24px; }
+#ecofog .mesh-development .mesh-photo > a { aspect-ratio: 4/3; }
+#ecofog .mesh-development .mesh-photo img { object-fit: contain; }
+.case-study .compact-evidence .photo figcaption { font-size: 16px; line-height: 1.35; }
+@media(max-width:700px) {
+  .evidence-pair { grid-template-columns: 1fr; gap: 28px; }
+  .comparison-plots { grid-template-columns: 1fr; gap: 20px; }
+  .case-study .compact-evidence .technical-photo img { max-height: none; }
+  #ecofog .ecofog-test-pair { gap: 14px; }
+}
