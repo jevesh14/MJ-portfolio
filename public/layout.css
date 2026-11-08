@@ -977,3 +977,26 @@ body#page-top #niraksha-section-2 .story-visual > figure:nth-child(n) { margin: 
 @media(max-width:480px) {
  body#page-top #niraksha-section-2 .story-visual { grid-template-columns: 1fr; }
 }
+/* Recognition is opened directly from its logo, without duplicate evidence columns. */
+body#page-top .award-click-hint { font-size: 18px; line-height: 1.45; color: var(--muted); margin: -10px 0 26px; }
+body#page-top .recognition-record > .recognition-copy { display: block; min-width: 0; }
+body#page-top .recognition-record .recognition-copy h3 { margin: 0 0 10px; }
+body#page-top .recognition-record .recognition-copy p { margin-top: 12px; }
+body#page-top .recognition-art .award-logo-link { display: block; width: 100%; text-decoration: none; }
+body#page-top .award-logo-link img { transition: transform .18s ease; }
+body#page-top .award-logo-link:hover img { transform: scale(1.035); }
+body#page-top .award-logo-link:focus-visible,
+body#page-top .diana-award-evidence a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+body#page-top #recognition-group-0 #diana { display: block; }
+body#page-top #diana .diana-award-evidence { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px; margin-top: 26px; align-items: start; }
+body#page-top #diana .diana-award-evidence figure { width: 100%; min-width: 0; margin: 0; }
+body#page-top #diana .diana-award-evidence .recognition-art { width: 100%; }
+body#page-top #diana .diana-award-evidence a { display: block; width: 100%; height: 250px; }
+body#page-top #diana .diana-award-evidence img { display: block; width: 100%; height: 250px; max-height: none; object-fit: contain; object-position: center top; }
+body#page-top #diana .diana-award-evidence figcaption { font-size: 17px; line-height: 1.35; margin-top: 12px; }
+@media(max-width:740px) {
+ body#page-top #diana .diana-award-evidence { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px 20px; }
+ body#page-top #diana .diana-award-evidence a,
+ body#page-top #diana .diana-award-evidence img { height: 230px; }
+}
+@media(prefers-reduced-motion:reduce) { body#page-top .award-logo-link img { transition: none; } }
