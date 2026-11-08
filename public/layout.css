@@ -644,3 +644,59 @@ body[data-page="my-projects"] .section-fold__heading { line-height: 1.25; }
 
 /* Letter markers share the project-number accent. */
 h3 .subsection-letter { color: #990000; }
+
+/* Match the heights of the two complete specimens without cutting either one. */
+#ecofog .mesh-overview .mesh-comparison {
+  display: grid; grid-template-columns: 1.286713fr 1.596010fr;
+  gap: 12px 28px; width: min(100%,820px); align-items: start;
+}
+#ecofog .mesh-overview .mesh-comparison > .photo { width: 100%; max-width: none; margin: 0; }
+#ecofog .mesh-overview .mesh-comparison .photo > a { display: block; width: 100%; height: auto; aspect-ratio: auto; margin: 0; }
+#ecofog .mesh-overview .mesh-comparison .photo img { display: block; width: 100%; height: auto; max-height: none; max-width: 100%; margin: 0; }
+#ecofog .mesh-overview .mesh-comparison .photo figcaption { margin-top: 12px; font-size: 17px; line-height: 1.4; }
+#ecofog .mesh-overview .mesh-comparison > .mesh-key { font-size: 16px; line-height: 1.45; gap: 8px; }
+/* A closer text measure gives the network explanation a balanced vertical rhythm. */
+#ambugo .network-section {
+  width: min(100%,820px); max-width: 820px;
+  grid-template-columns: minmax(0,1fr) 290px; gap: 16px 32px;
+}
+#ambugo .network-section > p { max-width: 46ch; font-size: 20px; line-height: 1.55; }
+#ambugo .network-section > .photo { max-width: 290px; }
+#ambugo .network-section .photo img { max-height: 290px; }
+#ambugo .network-section figcaption { font-size: 16px; line-height: 1.4; }
+/* Frame the supplied regions in CSS, preserving the untouched source assets. */
+.photo > a.cropped-photo,
+#ecofog .mesh-overview .mesh-comparison .photo > a.cropped-photo,
+#viking-clap .viking-pair .photo > a.cropped-photo {
+  position: relative; display: block; width: 100%; height: auto;
+  aspect-ratio: var(--crop-aspect); overflow: hidden; border: 0; border-radius: 0;
+}
+.photo > a.cropped-photo > img,
+.lightbox-image-frame.is-cropped > img {
+  position: absolute !important; display: block;
+  width: var(--crop-width) !important; height: var(--crop-height) !important;
+  max-width: none !important; max-height: none !important;
+  left: var(--crop-left); top: var(--crop-top);
+  margin: 0 !important; object-fit: fill !important; transform: none !important; clip-path: none !important;
+}
+/* Only the enlarged image and close control appear; there is no backdrop or panel. */
+.lightbox { width: fit-content; max-width: 96vw; max-height: 96dvh; padding: 36px 0 0; overflow: visible; background: transparent; border: 0; box-shadow: none; }
+.lightbox::backdrop { background: transparent; backdrop-filter: none; }
+.lightbox > p { display: none; }
+.lightbox-image-frame { position: relative; width: fit-content; max-width: 92vw; margin: 0 auto; }
+.lightbox .lightbox-image-frame > img { display: block; width: auto; height: auto; max-width: 92vw; max-height: 84dvh; object-fit: contain; }
+.lightbox-image-frame.is-cropped { width: min(92vw,calc(84dvh * var(--crop-aspect))); aspect-ratio: var(--crop-aspect); overflow: hidden; }
+.lightbox-close { top: 0; right: 0; padding: 4px 0 8px 12px; background: transparent; color: var(--navy); }
+@media(max-width:700px) {
+  #ambugo .network-section { display: grid; grid-template-columns: minmax(0,1fr) 220px; gap: 16px 24px; }
+  #ambugo .network-section > .photo { max-width: 220px; }
+  #ecofog .mesh-overview .mesh-comparison { gap: 12px 18px; }
+}
+@media(max-width:560px) {
+  #ambugo .network-section { display: flex; flex-direction: column; }
+  #ambugo .network-section > .photo { width: min(100%,290px); max-width: 290px; }
+  #ecofog .mesh-overview .mesh-comparison { grid-template-columns: 1fr; width: min(100%,430px); gap: 16px; }
+  #ecofog .mesh-overview .mesh-comparison > .photo:first-child { grid-column: 1; grid-row: 1; }
+  #ecofog .mesh-overview .mesh-comparison > .mesh-key { grid-column: 1; grid-row: 2; }
+  #ecofog .mesh-overview .mesh-comparison > .photo:last-child { grid-column: 1; grid-row: 3; }
+}

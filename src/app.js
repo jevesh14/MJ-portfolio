@@ -19,14 +19,27 @@ document.addEventListener('keydown', event => {
 });
 window.matchMedia('(min-width: 1151px)').addEventListener('change', closeMenu);
 
-// Original full-size photographs remain available by mouse and keyboard.
+// Keep the same photograph framing in the page and its keyboard-accessible viewer.
 const viewer = document.querySelector('.lightbox');
 let previousFocus;
 if (viewer && typeof viewer.showModal === 'function') {
+  const viewerImage = viewer.querySelector('img');
+  const imageFrame = document.createElement('div');
+  imageFrame.className = 'lightbox-image-frame';
+  viewerImage.before(imageFrame);
+  imageFrame.append(viewerImage);
   document.querySelectorAll('[data-lightbox]').forEach(link => link.addEventListener('click', event => {
     event.preventDefault();
     previousFocus = link;
-    viewer.querySelector('img').src = link.href;
+    const cropped = Boolean(link.dataset.crop);
+    imageFrame.classList.toggle('is-cropped', cropped);
+    imageFrame.removeAttribute('style');
+    if (cropped) {
+      for (const property of ['--crop-aspect', '--crop-width', '--crop-height', '--crop-left', '--crop-top']) {
+        imageFrame.style.setProperty(property, link.style.getPropertyValue(property));
+      }
+    }
+    viewerImage.src = link.href;
     viewer.querySelector('img').alt = link.dataset.caption;
     viewer.querySelector('p').textContent = link.dataset.caption;
     viewer.showModal();
