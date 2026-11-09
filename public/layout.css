@@ -1194,11 +1194,6 @@ body#page-top #mtsi.recognition-record .recognition-art img { width:360px; heigh
  body#page-top #mtsi.recognition-record .recognition-art img { width:100%; height:auto; }
 }
 
-/* Outline image frames without changing their dimensions or crop positions. */
-body#page-top img { outline:1.5px solid #000; outline-offset:-1.5px; }
-body#page-top .photo > a.cropped-photo,
-body#page-top .lightbox-image-frame.is-cropped { outline:1.5px solid #000; outline-offset:-1.5px; }
-body#page-top .photo > a.cropped-photo > img { outline:none; }
 /* Seven trophies in centered rows of two, three, and two. */
 body#page-top #school-awards .trophy-grid { grid-template-columns:repeat(6,minmax(0,1fr)); max-width:1060px; margin-inline:auto; gap:30px 24px; text-align:center; }
 body#page-top #school-awards .trophy-grid > .photo { grid-column:span 2; }
@@ -1214,4 +1209,12 @@ body#page-top #school-awards .trophy-grid > .photo:nth-child(7) { grid-column:4 
  body#page-top #school-awards .trophy-grid .photo > a { height:auto; aspect-ratio:1; }
  body#page-top #school-awards .trophy-grid .photo img { height:100%; max-height:none; }
  body#page-top #school-awards .trophy-grid figcaption { font-size:14px; line-height:1.3; }
+}
+
+/* Use the enlarged transparent Penn wordmark in the homepage selection record. */
+body[data-page="index"] .penn-selection { grid-template-columns:360px minmax(0,1fr); gap:36px; }
+body[data-page="index"] .penn-selection > img { display:block; width:360px; height:auto; max-height:none; background:transparent; }
+@media(max-width:900px) {
+ body[data-page="index"] .penn-selection { grid-template-columns:1fr; gap:24px; }
+ body[data-page="index"] .penn-selection > img { width:min(100%,440px); height:auto; }
 }
