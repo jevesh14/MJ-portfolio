@@ -1170,3 +1170,7 @@ body#page-top #care .care-gallery .photo { margin:0; min-width:0; }
 body#page-top #care .care-gallery .photo > a { display:block; height:auto; aspect-ratio:auto; }
 body#page-top #care .care-gallery img { display:block; width:100%; height:auto; max-height:none; object-fit:contain; }
 @media(max-width:640px) { body#page-top #care .care-gallery { grid-template-columns:1fr; gap:24px; } }
+
+/* Keep the two field evaluation stages distinct within the shared account. */
+body#page-top #ambugo-section-5 .story-copy > h4 { font-size:25px; font-weight:600; line-height:1.25; margin:28px 0 12px; }
+body#page-top #ambugo-section-5 .story-copy > h4:first-child { margin-top:0; }
