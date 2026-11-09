@@ -1161,3 +1161,12 @@ body#page-top .back-to-top.in-footer:hover { background: #fcfaf5; color: #011f5b
  body#page-top .back-to-top.in-footer { margin-left: 0; }
 }
 @media(prefers-reduced-motion:reduce) { body#page-top .recognition-track[data-ready="true"] { animation: none; } }
+
+/* Preserve the source photograph's proportions without a conflicting crop frame. */
+body#page-top #musica .musica-hero .photo > a { display:block; height:auto; aspect-ratio:auto; }
+body#page-top #musica .musica-hero .photo img { display:block; position:static; width:100%; height:auto; max-height:none; object-fit:contain; }
+body#page-top #care .care-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; gap:26px; margin-top:26px; }
+body#page-top #care .care-gallery .photo { margin:0; min-width:0; }
+body#page-top #care .care-gallery .photo > a { display:block; height:auto; aspect-ratio:auto; }
+body#page-top #care .care-gallery img { display:block; width:100%; height:auto; max-height:none; object-fit:contain; }
+@media(max-width:640px) { body#page-top #care .care-gallery { grid-template-columns:1fr; gap:24px; } }
