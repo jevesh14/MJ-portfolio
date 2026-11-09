@@ -94,7 +94,7 @@ function sizeRecognitionStrip() {
     if (!track || !group) return;
     const width = group.getBoundingClientRect().width;
     track.style.setProperty('--ticker-width', `${width}px`);
-    track.style.setProperty('--ticker-duration', `${Math.max(120, width / 42)}s`);
+    track.style.setProperty('--ticker-duration', `${Math.max(120, width / 50)}s`);
     track.dataset.ready = 'true';
   });
 }

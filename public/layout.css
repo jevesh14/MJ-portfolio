@@ -1081,3 +1081,18 @@ body#page-top .project-portal-link { margin: 18px 0 24px; }
 }
 /* Keep the approved Leaders of Today wordmark at its existing visible width. */
 body#page-top .recognition-ticker .identity-mark[data-recognition-id="leaders"] img { width: 180px; }
+/* A slight optical reduction keeps each existing alignment frame intact. */
+body#page-top .normalized-award-logo { scale: .94; transform-origin: center; }
+body#page-top #school-awards .school-awards-cover { width: 100%; max-width: 980px; margin: 26px auto 34px; }
+body#page-top #school-awards .school-awards-cover .photo > a { display: block; width: 100%; height: auto; aspect-ratio: 8/5; background: transparent; }
+body#page-top #school-awards .school-awards-cover img { width: 100%; height: 100%; max-height: none; object-fit: contain; }
+body#page-top #school-awards .trophy-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px 24px; align-items: start; }
+body#page-top #school-awards .trophy-grid .photo { width: 100%; margin: 0; }
+body#page-top #school-awards .trophy-grid .photo > a { display: flex; width: 100%; height: 230px; aspect-ratio: auto; align-items: center; justify-content: center; background: transparent; }
+body#page-top #school-awards .trophy-grid .photo img { width: 100%; height: 230px; max-height: 230px; object-fit: contain; background: transparent; }
+body#page-top #school-awards .trophy-grid figcaption { margin-top: 13px; font-size: 17px; line-height: 1.35; }
+@media(max-width:740px) {
+ body#page-top #school-awards .trophy-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 26px 18px; }
+ body#page-top #school-awards .trophy-grid .photo > a,
+ body#page-top #school-awards .trophy-grid .photo img { height: 210px; max-height: 210px; }
+}
