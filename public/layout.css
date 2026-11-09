@@ -1193,3 +1193,25 @@ body#page-top #mtsi.recognition-record .recognition-art img { width:360px; heigh
  body#page-top #mtsi.recognition-record .recognition-art { width:min(100%,440px); justify-self:start; }
  body#page-top #mtsi.recognition-record .recognition-art img { width:100%; height:auto; }
 }
+
+/* Outline image frames without changing their dimensions or crop positions. */
+body#page-top img { outline:1.5px solid #000; outline-offset:-1.5px; }
+body#page-top .photo > a.cropped-photo,
+body#page-top .lightbox-image-frame.is-cropped { outline:1.5px solid #000; outline-offset:-1.5px; }
+body#page-top .photo > a.cropped-photo > img { outline:none; }
+/* Seven trophies in centered rows of two, three, and two. */
+body#page-top #school-awards .trophy-grid { grid-template-columns:repeat(6,minmax(0,1fr)); max-width:1060px; margin-inline:auto; gap:30px 24px; text-align:center; }
+body#page-top #school-awards .trophy-grid > .photo { grid-column:span 2; }
+body#page-top #school-awards .trophy-grid > .photo:nth-child(1) { grid-column:2 / span 2; grid-row:1; }
+body#page-top #school-awards .trophy-grid > .photo:nth-child(2) { grid-column:4 / span 2; grid-row:1; }
+body#page-top #school-awards .trophy-grid > .photo:nth-child(3) { grid-column:1 / span 2; grid-row:2; }
+body#page-top #school-awards .trophy-grid > .photo:nth-child(4) { grid-column:3 / span 2; grid-row:2; }
+body#page-top #school-awards .trophy-grid > .photo:nth-child(5) { grid-column:5 / span 2; grid-row:2; }
+body#page-top #school-awards .trophy-grid > .photo:nth-child(6) { grid-column:2 / span 2; grid-row:3; }
+body#page-top #school-awards .trophy-grid > .photo:nth-child(7) { grid-column:4 / span 2; grid-row:3; }
+@media(max-width:740px) {
+ body#page-top #school-awards .trophy-grid { gap:24px 12px; }
+ body#page-top #school-awards .trophy-grid .photo > a { height:auto; aspect-ratio:1; }
+ body#page-top #school-awards .trophy-grid .photo img { height:100%; max-height:none; }
+ body#page-top #school-awards .trophy-grid figcaption { font-size:14px; line-height:1.3; }
+}
