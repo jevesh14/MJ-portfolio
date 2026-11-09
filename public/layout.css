@@ -1177,3 +1177,19 @@ body#page-top #ambugo-section-5 .story-copy > h4:first-child { margin-top:0; }
 
 body#page-top #ambugo-section-5 > .section-fold__toggle { margin-bottom:30px; }
 @media(max-width:700px) { body#page-top #ambugo-section-5 .story-copy > h4 { font-size:19px; } }
+
+/* Dark lettering keeps the transparent Conrad wordmark readable on ivory. */
+body#page-top img.normalized-award-logo[src*="conrad-display"] { filter:brightness(.25); }
+/* Give the opening demonstration sentences the full available measure. */
+body[data-page="index"] .home-demo > .section-heading { display:block; }
+body[data-page="index"] .home-demo > .section-heading h2 { width:100%; max-width:none; }
+body[data-page="index"] .home-demo > .section-heading > .text-link { display:inline-block; margin-top:16px; }
+/* The long Penn wordmark needs a wider frame than a square award mark. */
+body#page-top #mtsi.recognition-record { grid-template-columns:360px minmax(0,1fr); gap:36px; }
+body#page-top #mtsi.recognition-record .recognition-art { width:360px; }
+body#page-top #mtsi.recognition-record .recognition-art img { width:360px; height:auto; max-height:none; }
+@media(max-width:900px) {
+ body#page-top #mtsi.recognition-record { grid-template-columns:1fr; gap:24px; }
+ body#page-top #mtsi.recognition-record .recognition-art { width:min(100%,440px); justify-self:start; }
+ body#page-top #mtsi.recognition-record .recognition-art img { width:100%; height:auto; }
+}
