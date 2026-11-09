@@ -93,8 +93,16 @@ function sizeRecognitionStrip() {
     const group = track?.querySelector('.marquee-group');
     if (!track || !group) return;
     const width = group.getBoundingClientRect().width;
+    const duration = Math.max(120, width / 50);
+    const viewportWidth = ticker.querySelector('.marquee-window')?.getBoundingClientRect().width || 0;
+    const cards = [...group.children].slice(0, 3);
+    const gap = parseFloat(getComputedStyle(group).columnGap || getComputedStyle(group).gap) || 0;
+    const clusterWidth = cards.reduce((total, card) => total + card.getBoundingClientRect().width, 0) + gap * Math.max(0, cards.length - 1);
+    const entryOffset = viewportWidth >= clusterWidth + 60 ? viewportWidth - clusterWidth : viewportWidth * .5;
+    const delay = width > 0 ? -duration * (1 - Math.min(entryOffset, width) / width) : 0;
     track.style.setProperty('--ticker-width', `${width}px`);
-    track.style.setProperty('--ticker-duration', `${Math.max(120, width / 50)}s`);
+    track.style.setProperty('--ticker-duration', `${duration}s`);
+    track.style.setProperty('--ticker-delay', `${delay}s`);
     track.dataset.ready = 'true';
   });
 }
@@ -115,8 +123,23 @@ if (document.body.dataset.page === 'research' && location.hash === '#ambugo-stud
 // Keep the fixed return link out of the opening view and keyboard order.
 const backToTop = document.querySelector('.back-to-top');
 function updateBackToTop() {
-  if (backToTop) backToTop.hidden = window.scrollY < 400;
+  if (!backToTop) return;
+  backToTop.hidden = window.scrollY < 400;
+  const footer = document.querySelector('.site-footer');
+  const footerBottom = footer?.querySelector('.footer-bottom');
+  const inFooter = Boolean(footerBottom && footer.getBoundingClientRect().top < window.innerHeight);
+  if (inFooter && backToTop.parentElement !== footerBottom) footerBottom.append(backToTop);
+  else if (!inFooter && footer && backToTop.parentElement === footerBottom) footer.after(backToTop);
+  backToTop.classList.toggle('in-footer', inFooter);
 }
 window.addEventListener('scroll', updateBackToTop, { passive: true });
 window.addEventListener('pageshow', updateBackToTop);
+window.addEventListener('resize', updateBackToTop);
 updateBackToTop();
+
+// Preserve bookmarks after consolidating the community and media tabs.
+if (document.body.dataset.page === 'beyond-classroom') {
+  location.replace('music.html' + location.hash);
+} else if (document.body.dataset.page === 'media') {
+  location.replace(location.hash === '#clinical' ? 'proofs.html#clinical-records' : 'education.html#media');
+}
