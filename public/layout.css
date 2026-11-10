@@ -1218,3 +1218,12 @@ body[data-page="index"] .penn-selection > img { display:block; width:360px; heig
  body[data-page="index"] .penn-selection { grid-template-columns:1fr; gap:24px; }
  body[data-page="index"] .penn-selection > img { width:min(100%,440px); height:auto; }
 }
+
+/* Make supporting records easy to find before the award list. */
+body[data-page="education"] .recognition-opening-actions { display:flex; flex-wrap:wrap; align-items:center; gap:18px 28px; margin:24px 0 28px; }
+body[data-page="education"] .recognition-proof-button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 22px; background:var(--navy); color:#fcfaf5; font-size:23px; font-weight:600; line-height:1.25; text-decoration:none; }
+body[data-page="education"] .recognition-proof-button:hover { background:var(--accent); }
+body[data-page="education"] .recognition-proof-button:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+body[data-page="education"] .award-click-hint { color:var(--accent); font-size:24px; font-weight:600; line-height:1.4; margin:28px 0; max-width:none; }
+body[data-page="education"] .recognition-title-link { color:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:6px; }
+@media(max-width:740px) { body[data-page="education"] .award-click-hint { font-size:22px; } }
